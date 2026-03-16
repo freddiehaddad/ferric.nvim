@@ -243,6 +243,12 @@ local function get_groups()
 
 		-- Treesitter
 		["@variable"] = { fg = p.limestone },
+		["@variable.builtin"] = { fg = p.rust },
+		["@number"] = { fg = p.cobalt },
+		["@number.float"] = { fg = p.cobalt },
+		["@function.builtin"] = { fg = p.patina },
+		["@constant.builtin"] = { fg = p.ember },
+		["@punctuation.special"] = { fg = p.cast_iron },
 
 		-- Diagnostics
 		DiagnosticError = { fg = p.rust },
