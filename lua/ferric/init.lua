@@ -48,8 +48,8 @@ local function get_groups()
 	local groups = {
 		-- Links
 		Boolean = { link = "Constant" },
-		CursorLineFold = { link = "FoldColumn" },
-		CursorLineSign = { link = "SignColumn" },
+		CursorLineFold = { fg = p.tarnish, bg = p.crucible },
+		CursorLineSign = { bg = p.crucible },
 		Debug = { link = "Special" },
 		Define = { link = "PreProc" },
 		Float = { link = "Constant" },
