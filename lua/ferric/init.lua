@@ -107,7 +107,7 @@ local function get_groups()
 		-- Selection
 		Visual = { bg = p.alloy },
 		VisualNOS = { bg = p.alloy, bold = true },
-		MatchParen = { bg = p.alloy, bold = true },
+		MatchParen = { fg = p.copper, bg = p.alloy, bold = true },
 
 		-- Popup menu
 		Pmenu = { fg = p.limestone, bg = p.anvil },
