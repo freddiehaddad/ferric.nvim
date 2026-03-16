@@ -240,6 +240,19 @@ local function get_groups()
 
 		-- Telescope
 		TelescopeNormal = { fg = p.limestone, bg = p.anvil },
+		TelescopeBorder = { fg = p.anvil, bg = p.anvil },
+		TelescopePromptNormal = { fg = p.limestone, bg = p.anvil },
+		TelescopePromptBorder = { fg = p.anvil, bg = p.anvil },
+		TelescopePromptPrefix = { fg = p.rust },
+		TelescopePromptCounter = { fg = p.slag },
+		TelescopePromptTitle = { fg = p.rust, bold = true },
+		TelescopeResultsTitle = { fg = p.rust, bold = true },
+		TelescopePreviewTitle = { fg = p.rust, bold = true },
+		TelescopeSelection = { fg = p.limestone, bg = p.alloy, bold = true },
+		TelescopeSelectionCaret = { fg = p.rust, bg = p.alloy },
+		TelescopeMultiSelection = { fg = p.verdigris },
+		TelescopeMultiIcon = { fg = p.verdigris },
+		TelescopeMatching = { fg = p.cobalt, bold = true },
 
 		-- Treesitter
 		["@variable"] = { fg = p.limestone },
