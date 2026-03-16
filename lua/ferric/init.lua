@@ -301,6 +301,18 @@ local function get_groups()
 		BlinkCmpKindReference = { fg = p.ember },
 		BlinkCmpKindUnit = { fg = p.cobalt },
 
+		-- mini.statusline
+		MiniStatuslineModeNormal = { fg = p.copper },
+		MiniStatuslineModeInsert = { fg = p.rust },
+		MiniStatuslineModeVisual = { fg = p.verdigris },
+		MiniStatuslineModeReplace = { fg = p.brick },
+		MiniStatuslineModeCommand = { fg = p.copper },
+		MiniStatuslineModeOther = { fg = p.oxidized },
+		MiniStatuslineDevinfo = { fg = p.limestone },
+		MiniStatuslineFilename = { fg = p.tarnish },
+		MiniStatuslineFileinfo = { fg = p.tarnish },
+		MiniStatuslineInactive = { fg = p.slag },
+
 		-- Treesitter
 		["@variable"] = { fg = p.limestone },
 		["@variable.builtin"] = { fg = p.rust },
