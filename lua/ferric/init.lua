@@ -78,7 +78,7 @@ local function get_groups()
 		lCursor = { fg = p.void, bg = p.rust },
 		CursorLine = { bg = p.crucible },
 		CursorColumn = { bg = p.crucible },
-		CursorLineNr = { fg = p.rust },
+		CursorLineNr = { fg = p.rust, bg = p.crucible },
 		LineNr = { fg = p.mill_scale },
 		SignColumn = { fg = p.mill_scale },
 		ColorColumn = { bg = p.forge },
