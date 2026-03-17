@@ -69,7 +69,7 @@ local function get_groups()
 		Typedef = { link = "Type" },
 
 		-- Editor
-		Normal = { fg = p.limestone, bg = p.void },
+		Normal = { fg = p.limestone },
 		Bold = { bold = true },
 		Italic = { italic = true },
 		Underlined = { underline = true },
@@ -128,11 +128,11 @@ local function get_groups()
 		-- Tab line
 		TabLineFill = { bg = p.forge },
 		TabLine = { fg = p.slag, bg = p.forge },
-		TabLineSel = { fg = p.limestone, bg = p.void },
+		TabLineSel = { fg = p.limestone },
 
 		-- Title bar
-		TitleBar = { fg = p.limestone, bg = p.forge },
-		TitleBarNC = { fg = p.slag, bg = p.void },
+		TitleBar = { fg = p.limestone },
+		TitleBarNC = { fg = p.slag },
 
 		-- Wild menu
 		WildMenu = { bg = p.alloy },
