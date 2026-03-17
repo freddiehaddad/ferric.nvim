@@ -246,6 +246,7 @@ local function get_groups()
 		TelescopePromptPrefix = { fg = p.rust },
 		TelescopePromptCounter = { fg = p.slag },
 		TelescopePromptTitle = { fg = p.rust, bold = true },
+		TelescopeResultsNormal = { fg = p.slag, bg = p.anvil },
 		TelescopeResultsTitle = { fg = p.rust, bold = true },
 		TelescopePreviewTitle = { fg = p.rust, bold = true },
 		TelescopeSelection = { fg = p.limestone, bg = p.alloy, bold = true },
