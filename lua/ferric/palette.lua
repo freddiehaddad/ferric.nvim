@@ -2,10 +2,10 @@ return {
 	-- Backgrounds (surfaces)
 	void = "#000000",
 	forge = "#0c0808",
-	anvil = "#141010",
+	anvil = "#1e1614",
 	smelt = "#282220",
-	crucible = "#241e1c",
-	alloy = "#322a26",
+	crucible = "#2c1a16",
+	alloy = "#3c2a1e",
 	mill_scale = "#3e3430",
 
 	-- Foregrounds
