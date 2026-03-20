@@ -89,6 +89,7 @@ local function get_groups()
 
 		-- Floating windows
 		NormalFloat = { fg = p.limestone, bg = p.anvil },
+		FloatBorder = { fg = p.anvil, bg = p.anvil },
 		FloatShadow = { bg = p.forge, blend = 80 },
 		FloatShadowThrough = { bg = p.forge, blend = 100 },
 
