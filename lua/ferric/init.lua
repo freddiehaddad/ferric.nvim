@@ -81,7 +81,7 @@ local function get_groups()
 		CursorLineNr = { fg = p.rust, bg = p.crucible },
 		LineNr = { fg = p.mill_scale },
 		SignColumn = { fg = p.mill_scale },
-		ColorColumn = { bg = p.forge },
+		ColorColumn = { bg = p.smelt },
 		EndOfBuffer = { fg = p.special },
 		NonText = { fg = p.special },
 		Conceal = { fg = p.muted },
