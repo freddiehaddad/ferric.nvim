@@ -315,6 +315,17 @@ local function get_groups()
 		MiniStatuslineFileinfo = { fg = p.tarnish },
 		MiniStatuslineInactive = { fg = p.slag },
 
+		-- mini.starter
+		MiniStarterHeader = { fg = p.rust },
+		MiniStarterFooter = { fg = p.rust },
+		MiniStarterSection = { fg = p.copper, bold = true },
+		MiniStarterItem = { fg = p.slag },
+		MiniStarterItemBullet = { fg = p.mill_scale },
+		MiniStarterItemPrefix = { fg = p.ember },
+		MiniStarterCurrent = { fg = p.limestone, bg = p.crucible, bold = true },
+		MiniStarterQuery = { fg = p.forge_amber, bold = true },
+		MiniStarterInactive = { fg = p.special },
+
 		-- Treesitter
 		["@variable"] = { fg = p.limestone },
 		["@variable.builtin"] = { fg = p.rust },
