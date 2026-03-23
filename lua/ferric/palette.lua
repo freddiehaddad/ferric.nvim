@@ -7,6 +7,8 @@ return {
 	crucible = "#2c1a16",
 	alloy = "#3c2a1e",
 	mill_scale = "#3e3430",
+	quench_dark = "#121a18",
+	deep_cobalt = "#14141c",
 
 	-- Foregrounds
 	limestone = "#d0c8b8",
