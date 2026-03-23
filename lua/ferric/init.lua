@@ -310,7 +310,7 @@ local function get_groups()
 		MiniStatuslineModeReplace = { fg = p.brick },
 		MiniStatuslineModeCommand = { fg = p.copper },
 		MiniStatuslineModeOther = { fg = p.oxidized },
-		MiniStatuslineDevinfo = { fg = p.limestone },
+		MiniStatuslineDevinfo = { fg = p.tarnish },
 		MiniStatuslineFilename = { fg = p.tarnish },
 		MiniStatuslineFileinfo = { fg = p.tarnish },
 		MiniStatuslineInactive = { fg = p.slag },
