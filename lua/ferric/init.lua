@@ -114,7 +114,7 @@ local function get_groups()
 
 		-- Popup menu
 		Pmenu = { fg = p.limestone, bg = p.quench_dark },
-		PmenuSel = { bg = p.alloy, bold = true },
+		PmenuSel = { bg = p.quench_bright, bold = true },
 		PmenuKind = { fg = p.copper },
 		PmenuKindSel = { fg = p.copper, bold = true },
 		PmenuMatch = { fg = p.cobalt, bold = true },
@@ -122,7 +122,7 @@ local function get_groups()
 		PmenuExtra = { fg = p.slag },
 		PmenuExtraSel = { fg = p.slag, bold = true },
 		PmenuSbar = {},
-		PmenuThumb = { bg = p.mill_scale },
+		PmenuThumb = { bg = p.quench_mid },
 
 		-- Status line
 		StatusLine = { fg = p.limestone },
@@ -252,8 +252,8 @@ local function get_groups()
 		TelescopeResultsNormal = { fg = p.slag, bg = p.quench_dark },
 		TelescopeResultsTitle = { fg = p.rust, bold = true },
 		TelescopePreviewTitle = { fg = p.rust, bold = true },
-		TelescopeSelection = { fg = p.limestone, bg = p.alloy, bold = true },
-		TelescopeSelectionCaret = { fg = p.rust, bg = p.alloy },
+		TelescopeSelection = { fg = p.limestone, bg = p.quench_bright, bold = true },
+		TelescopeSelectionCaret = { fg = p.rust, bg = p.quench_bright },
 		TelescopeMultiSelection = { fg = p.verdigris },
 		TelescopeMultiIcon = { fg = p.verdigris },
 		TelescopeMatching = { fg = p.cobalt, bold = true },
@@ -261,8 +261,8 @@ local function get_groups()
 		-- blink.cmp
 		BlinkCmpMenu = { fg = p.limestone, bg = p.quench_dark },
 		BlinkCmpMenuBorder = { fg = p.quench_edge, bg = p.quench_dark },
-		BlinkCmpMenuSelection = { bg = p.alloy, bold = true },
-		BlinkCmpScrollBarThumb = { bg = p.mill_scale },
+		BlinkCmpMenuSelection = { bg = p.quench_bright, bold = true },
+		BlinkCmpScrollBarThumb = { bg = p.quench_mid },
 		BlinkCmpScrollBarGutter = {},
 		BlinkCmpLabel = { fg = p.limestone },
 		BlinkCmpLabelMatch = { fg = p.cobalt, bold = true },

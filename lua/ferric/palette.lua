@@ -7,6 +7,8 @@ return {
 	alloy = "#3c2a1e",
 	mill_scale = "#3e3430",
 	quench_dark = "#121a18",
+	quench_bright = "#1e3830",
+	quench_mid = "#1a2824",
 
 	-- Border foreground (slightly brighter than quench_dark)
 	quench_edge = "#222a28",
