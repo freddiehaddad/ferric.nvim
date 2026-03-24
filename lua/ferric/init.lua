@@ -1,3 +1,5 @@
+--- @diagnostic disable: undefined-global
+
 --- @class FerricConfig
 --- @field terminal_colors boolean?
 --- @field overrides table<string, table>?
