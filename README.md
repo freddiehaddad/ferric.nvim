@@ -29,7 +29,7 @@ The name comes from *ferric* (Fe³⁺) — iron in its oxidized state. Rust.
 | Punctuation | Mill Scale  | ![#585050](https://placehold.co/16/585050/585050) | `#585050` |
 | Text        | Limestone   | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) | `#d0c8b8` |
 | Background  | Void        | ![#000000](https://placehold.co/16/000000/000000) | `#000000` |
-| UI surfaces | Dark forge  | ![#0c0808](https://placehold.co/16/0c0808/0c0808) | `#0c0808` |
+| UI surfaces | Quench Dark | ![#121a18](https://placehold.co/16/121a18/121a18) | `#121a18` |
 
 ### Design Principles
 
@@ -41,8 +41,8 @@ The name comes from *ferric* (Fe³⁺) — iron in its oxidized state. Rust.
   from the warm mass like oxidation products stand apart from raw metal.
 - **Scaffolding as raw iron** — operators and punctuation use cool iron-gray
   tones that recede behind the warm syntax colors.
-- **True black + warm chrome** — `#000000` background, warm near-black surfaces
-  (`#0c0808`, `#141010`).
+- **True black + cool chrome** — `#000000` background, cool near-black surfaces
+  (`#121a18`, `#0c0808`).
 
 ## Installation
 
