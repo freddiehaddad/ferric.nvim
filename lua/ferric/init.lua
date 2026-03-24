@@ -263,7 +263,7 @@ local function get_groups()
 		BlinkCmpMenuBorder = { fg = p.anvil_edge, bg = p.anvil },
 		BlinkCmpMenuSelection = { bg = p.alloy, bold = true },
 		BlinkCmpScrollBarThumb = { bg = p.mill_scale },
-		BlinkCmpScrollBarGutter = { bg = p.anvil },
+		BlinkCmpScrollBarGutter = {},
 		BlinkCmpLabel = { fg = p.limestone },
 		BlinkCmpLabelMatch = { fg = p.cobalt, bold = true },
 		BlinkCmpLabelDeprecated = { fg = p.slag, strikethrough = true },
