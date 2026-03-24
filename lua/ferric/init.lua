@@ -91,7 +91,7 @@ local function get_groups()
 
 		-- Floating windows
 		NormalFloat = { fg = p.limestone, bg = p.anvil },
-		FloatBorder = { fg = p.anvil, bg = p.anvil },
+		FloatBorder = { fg = p.anvil_edge, bg = p.anvil },
 		FloatShadow = { bg = p.forge, blend = 80 },
 		FloatShadowThrough = { bg = p.forge, blend = 100 },
 
@@ -121,7 +121,7 @@ local function get_groups()
 		PmenuMatchSel = { bold = true },
 		PmenuExtra = { fg = p.slag },
 		PmenuExtraSel = { fg = p.slag, bold = true },
-		PmenuSbar = { bg = p.anvil },
+		PmenuSbar = {},
 		PmenuThumb = { bg = p.mill_scale },
 
 		-- Status line
@@ -243,9 +243,9 @@ local function get_groups()
 
 		-- Telescope
 		TelescopeNormal = { fg = p.limestone, bg = p.anvil },
-		TelescopeBorder = { fg = p.anvil, bg = p.anvil },
+		TelescopeBorder = { fg = p.anvil_edge, bg = p.anvil },
 		TelescopePromptNormal = { fg = p.limestone, bg = p.anvil },
-		TelescopePromptBorder = { fg = p.anvil, bg = p.anvil },
+		TelescopePromptBorder = { fg = p.anvil_edge, bg = p.anvil },
 		TelescopePromptPrefix = { fg = p.rust },
 		TelescopePromptCounter = { fg = p.slag },
 		TelescopePromptTitle = { fg = p.rust, bold = true },
@@ -260,7 +260,7 @@ local function get_groups()
 
 		-- blink.cmp
 		BlinkCmpMenu = { fg = p.limestone, bg = p.anvil },
-		BlinkCmpMenuBorder = { fg = p.anvil, bg = p.anvil },
+		BlinkCmpMenuBorder = { fg = p.anvil_edge, bg = p.anvil },
 		BlinkCmpMenuSelection = { bg = p.alloy, bold = true },
 		BlinkCmpScrollBarThumb = { bg = p.mill_scale },
 		BlinkCmpScrollBarGutter = { bg = p.anvil },
@@ -272,11 +272,11 @@ local function get_groups()
 		BlinkCmpSource = { fg = p.slag },
 		BlinkCmpGhostText = { fg = p.special },
 		BlinkCmpDoc = { fg = p.limestone, bg = p.quench_dark },
-		BlinkCmpDocBorder = { fg = p.quench_dark, bg = p.quench_dark },
+		BlinkCmpDocBorder = { fg = p.quench_edge, bg = p.quench_dark },
 		BlinkCmpDocSeparator = { fg = p.smelt, bg = p.quench_dark },
 		BlinkCmpDocCursorLine = { bg = p.temper },
 		BlinkCmpSignatureHelp = { fg = p.limestone, bg = p.deep_cobalt },
-		BlinkCmpSignatureHelpBorder = { fg = p.deep_cobalt, bg = p.deep_cobalt },
+		BlinkCmpSignatureHelpBorder = { fg = p.cobalt_edge, bg = p.deep_cobalt },
 		BlinkCmpSignatureHelpActiveParameter = { fg = p.rust, bold = true },
 		BlinkCmpKind = { fg = p.copper },
 		BlinkCmpKindFunction = { fg = p.verdigris },

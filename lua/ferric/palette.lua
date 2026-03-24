@@ -10,6 +10,11 @@ return {
 	quench_dark = "#121a18",
 	deep_cobalt = "#14141c",
 
+	-- Border foregrounds (slightly brighter than their parent surface)
+	anvil_edge = "#2e2624",
+	quench_edge = "#222a28",
+	cobalt_edge = "#24242c",
+
 	-- Foregrounds
 	limestone = "#d0c8b8",
 	tarnish = "#908070",
