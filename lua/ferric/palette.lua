@@ -2,18 +2,14 @@ return {
 	-- Backgrounds (surfaces)
 	void = "#000000",
 	forge = "#0c0808",
-	anvil = "#1e1614",
 	smelt = "#282220",
 	crucible = "#2c1a16",
 	alloy = "#3c2a1e",
 	mill_scale = "#3e3430",
 	quench_dark = "#121a18",
-	deep_cobalt = "#14141c",
 
-	-- Border foregrounds (slightly brighter than their parent surface)
-	anvil_edge = "#2e2624",
+	-- Border foreground (slightly brighter than quench_dark)
 	quench_edge = "#222a28",
-	cobalt_edge = "#24242c",
 
 	-- Foregrounds
 	limestone = "#d0c8b8",

@@ -90,14 +90,14 @@ local function get_groups()
 		VertSplit = { fg = p.smelt },
 
 		-- Floating windows
-		NormalFloat = { fg = p.limestone, bg = p.anvil },
-		FloatBorder = { fg = p.anvil_edge, bg = p.anvil },
+		NormalFloat = { fg = p.limestone, bg = p.quench_dark },
+		FloatBorder = { fg = p.quench_edge, bg = p.quench_dark },
 		FloatShadow = { bg = p.forge, blend = 80 },
 		FloatShadowThrough = { bg = p.forge, blend = 100 },
 
 		-- Window bar
-		WinBar = { fg = p.tarnish, bg = p.anvil, bold = true },
-		WinBarNC = { fg = p.tarnish, bg = p.anvil },
+		WinBar = { fg = p.tarnish, bg = p.quench_dark, bold = true },
+		WinBarNC = { fg = p.tarnish, bg = p.quench_dark },
 
 		-- Folds
 		Folded = { fg = p.tarnish, bg = p.crucible },
@@ -113,7 +113,7 @@ local function get_groups()
 		MatchParen = { fg = p.copper, bg = p.alloy, bold = true },
 
 		-- Popup menu
-		Pmenu = { fg = p.limestone, bg = p.anvil },
+		Pmenu = { fg = p.limestone, bg = p.quench_dark },
 		PmenuSel = { bg = p.alloy, bold = true },
 		PmenuKind = { fg = p.copper },
 		PmenuKindSel = { fg = p.copper, bold = true },
@@ -242,14 +242,14 @@ local function get_groups()
 		csvCol8 = { fg = p.oxidized },
 
 		-- Telescope
-		TelescopeNormal = { fg = p.limestone, bg = p.anvil },
-		TelescopeBorder = { fg = p.anvil_edge, bg = p.anvil },
-		TelescopePromptNormal = { fg = p.limestone, bg = p.anvil },
-		TelescopePromptBorder = { fg = p.anvil_edge, bg = p.anvil },
+		TelescopeNormal = { fg = p.limestone, bg = p.quench_dark },
+		TelescopeBorder = { fg = p.quench_edge, bg = p.quench_dark },
+		TelescopePromptNormal = { fg = p.limestone, bg = p.quench_dark },
+		TelescopePromptBorder = { fg = p.quench_edge, bg = p.quench_dark },
 		TelescopePromptPrefix = { fg = p.rust },
 		TelescopePromptCounter = { fg = p.slag },
 		TelescopePromptTitle = { fg = p.rust, bold = true },
-		TelescopeResultsNormal = { fg = p.slag, bg = p.anvil },
+		TelescopeResultsNormal = { fg = p.slag, bg = p.quench_dark },
 		TelescopeResultsTitle = { fg = p.rust, bold = true },
 		TelescopePreviewTitle = { fg = p.rust, bold = true },
 		TelescopeSelection = { fg = p.limestone, bg = p.alloy, bold = true },
@@ -259,8 +259,8 @@ local function get_groups()
 		TelescopeMatching = { fg = p.cobalt, bold = true },
 
 		-- blink.cmp
-		BlinkCmpMenu = { fg = p.limestone, bg = p.anvil },
-		BlinkCmpMenuBorder = { fg = p.anvil_edge, bg = p.anvil },
+		BlinkCmpMenu = { fg = p.limestone, bg = p.quench_dark },
+		BlinkCmpMenuBorder = { fg = p.quench_edge, bg = p.quench_dark },
 		BlinkCmpMenuSelection = { bg = p.alloy, bold = true },
 		BlinkCmpScrollBarThumb = { bg = p.mill_scale },
 		BlinkCmpScrollBarGutter = {},
@@ -275,8 +275,8 @@ local function get_groups()
 		BlinkCmpDocBorder = { fg = p.quench_edge, bg = p.quench_dark },
 		BlinkCmpDocSeparator = { fg = p.smelt, bg = p.quench_dark },
 		BlinkCmpDocCursorLine = { bg = p.temper },
-		BlinkCmpSignatureHelp = { fg = p.limestone, bg = p.deep_cobalt },
-		BlinkCmpSignatureHelpBorder = { fg = p.cobalt_edge, bg = p.deep_cobalt },
+		BlinkCmpSignatureHelp = { fg = p.limestone, bg = p.quench_dark },
+		BlinkCmpSignatureHelpBorder = { fg = p.quench_edge, bg = p.quench_dark },
 		BlinkCmpSignatureHelpActiveParameter = { fg = p.rust, bold = true },
 		BlinkCmpKind = { fg = p.copper },
 		BlinkCmpKindFunction = { fg = p.verdigris },
