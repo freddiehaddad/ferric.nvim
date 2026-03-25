@@ -318,8 +318,8 @@ local function get_groups()
 		MiniStatuslineInactive = { fg = p.slag },
 
 		-- mini.starter
-		MiniStarterHeader = { fg = p.quench_dark },
-		MiniStarterFooter = { fg = p.quench_dark },
+		MiniStarterHeader = { fg = p.rust },
+		MiniStarterFooter = { fg = p.rust },
 		MiniStarterSection = { fg = p.copper, bold = true },
 		MiniStarterItem = { fg = p.slag },
 		MiniStarterItemBullet = { fg = p.mill_scale },
