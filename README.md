@@ -24,23 +24,80 @@ temperature.
 
 The name comes from *ferric* (Fe³⁺) — iron in its oxidized state. Rust.
 
-### Syntax Palette
+### Syntax
 
-| Role        | Pigment     | Swatch                                            | Hex       |
-| ------------| ------------| ------------------------------------------------- | --------- |
-| Keywords    | Rust        | ![#cc5030](https://placehold.co/16/cc5030/cc5030) | `#cc5030` |
-| Functions   | Verdigris   | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88) | `#5aaa88` |
-| Strings     | Forge Amber | ![#c8a040](https://placehold.co/16/c8a040/c8a040) | `#c8a040` |
-| Types       | Copper      | ![#c08050](https://placehold.co/16/c08050/c08050) | `#c08050` |
-| Constants   | Ember       | ![#a86848](https://placehold.co/16/a86848/a86848) | `#a86848` |
-| Numbers     | Cobalt      | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0) | `#6a88b0` |
-| Properties  | Tarnish     | ![#908070](https://placehold.co/16/908070/908070) | `#908070` |
-| Operators   | Cast Iron   | ![#607068](https://placehold.co/16/607068/607068) | `#607068` |
-| Comments    | Slag        | ![#565050](https://placehold.co/16/565050/565050) | `#565050` |
-| Punctuation | Mill Scale  | ![#585050](https://placehold.co/16/585050/585050) | `#585050` |
-| Text        | Limestone   | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) | `#d0c8b8` |
-| Background  | Void        | ![#000000](https://placehold.co/16/000000/000000) | `#000000` |
-| UI surfaces | Quench Dark | ![#121a18](https://placehold.co/16/121a18/121a18) | `#121a18` |
+| Role        | Pigment     | Swatch                                             | Hex       |
+| ----------- | ----------- | -------------------------------------------------- | --------- |
+| Keywords    | Rust        | ![#cc5030](https://placehold.co/16/cc5030/cc5030)  | `#cc5030` |
+| Functions   | Verdigris   | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88)  | `#5aaa88` |
+| Strings     | Forge Amber | ![#c8a040](https://placehold.co/16/c8a040/c8a040)  | `#c8a040` |
+| Types       | Copper      | ![#c08050](https://placehold.co/16/c08050/c08050)  | `#c08050` |
+| Constants   | Ember       | ![#a86848](https://placehold.co/16/a86848/a86848)  | `#a86848` |
+| Numbers     | Cobalt      | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0)  | `#6a88b0` |
+| Preprocessor| Patina      | ![#5a9890](https://placehold.co/16/5a9890/5a9890)  | `#5a9890` |
+| Properties  | Tarnish     | ![#908070](https://placehold.co/16/908070/908070)  | `#908070` |
+| Operators   | Cast Iron   | ![#607068](https://placehold.co/16/607068/607068)  | `#607068` |
+| Comments    | Slag        | ![#565050](https://placehold.co/16/565050/565050)  | `#565050` |
+| Text        | Limestone   | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8)  | `#d0c8b8` |
+
+### UI Surfaces
+
+| Role             | Pigment       | Swatch                                              | Hex       |
+| ---------------- | ------------- | --------------------------------------------------- | --------- |
+| Background       | Void          | ![#000000](https://placehold.co/16/000000/000000)   | `#000000` |
+| Tab bar          | Forge         | ![#0c0808](https://placehold.co/16/0c0808/0c0808)   | `#0c0808` |
+| Floats / popups  | Quench Dark   | ![#121a18](https://placehold.co/16/121a18/121a18)   | `#121a18` |
+| Float borders    | Quench Edge   | ![#222a28](https://placehold.co/16/222a28/222a28)   | `#222a28` |
+| Scrollbar        | Quench Mid    | ![#1a2824](https://placehold.co/16/1a2824/1a2824)   | `#1a2824` |
+| Selection (menu) | Quench Bright | ![#1e3830](https://placehold.co/16/1e3830/1e3830)   | `#1e3830` |
+| Color column     | Smelt         | ![#282220](https://placehold.co/16/282220/282220)   | `#282220` |
+| Cursor line      | Crucible      | ![#142420](https://placehold.co/16/142420/142420)   | `#142420` |
+| Visual selection | Alloy         | ![#3c2a1e](https://placehold.co/16/3c2a1e/3c2a1e)   | `#3c2a1e` |
+| Line numbers     | Mill Scale    | ![#3e3430](https://placehold.co/16/3e3430/3e3430)   | `#3e3430` |
+| Muted text       | Muted         | ![#706860](https://placehold.co/16/706860/706860)   | `#706860` |
+| Ghost text       | Special       | ![#484040](https://placehold.co/16/484040/484040)   | `#484040` |
+
+### Diagnostics
+
+| Role    | Pigment   | Swatch                                             | Hex       |
+| ------- | --------- | -------------------------------------------------- | --------- |
+| Error   | Rust      | ![#cc5030](https://placehold.co/16/cc5030/cc5030)  | `#cc5030` |
+| Warning | Forge Amber | ![#c8a040](https://placehold.co/16/c8a040/c8a040) | `#c8a040` |
+| Info    | Cobalt    | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0)  | `#6a88b0` |
+| Hint    | Patina    | ![#5a9890](https://placehold.co/16/5a9890/5a9890)  | `#5a9890` |
+| Ok      | Verdigris | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88)  | `#5aaa88` |
+
+### Git / Diff
+
+| Role         | Pigment     | Swatch                                             | Hex       |
+| ------------ | ----------- | -------------------------------------------------- | --------- |
+| Added        | Verdigris   | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88)  | `#5aaa88` |
+| Changed      | Forge Amber | ![#c8a040](https://placehold.co/16/c8a040/c8a040)  | `#c8a040` |
+| Deleted      | Brick       | ![#c44838](https://placehold.co/16/c44838/c44838)  | `#c44838` |
+| Diff add bg  | Quench      | ![#204838](https://placehold.co/16/204838/204838)  | `#204838` |
+| Diff change bg | Temper    | ![#1a3838](https://placehold.co/16/1a3838/1a3838)  | `#1a3838` |
+| Diff delete bg | Scale     | ![#5a2020](https://placehold.co/16/5a2020/5a2020)  | `#5a2020` |
+
+### Terminal
+
+| Role           | Pigment          | Swatch                                             | Hex       |
+| -------------- | ---------------- | -------------------------------------------------- | --------- |
+| Black          | Void             | ![#000000](https://placehold.co/16/000000/000000)  | `#000000` |
+| Red            | Brick            | ![#c44838](https://placehold.co/16/c44838/c44838)  | `#c44838` |
+| Green          | Verdigris        | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88)  | `#5aaa88` |
+| Yellow         | Forge Amber      | ![#c8a040](https://placehold.co/16/c8a040/c8a040)  | `#c8a040` |
+| Blue           | Cobalt           | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0)  | `#6a88b0` |
+| Magenta        | Oxidized         | ![#a06888](https://placehold.co/16/a06888/a06888)  | `#a06888` |
+| Cyan           | Patina           | ![#5a9890](https://placehold.co/16/5a9890/5a9890)  | `#5a9890` |
+| White          | Limestone        | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8)  | `#d0c8b8` |
+| Bright Black   | Slag             | ![#565050](https://placehold.co/16/565050/565050)  | `#565050` |
+| Bright Red     | Bright Rust      | ![#d87068](https://placehold.co/16/d87068/d87068)  | `#d87068` |
+| Bright Green   | Bright Verdigris | ![#80c8a8](https://placehold.co/16/80c8a8/80c8a8)  | `#80c8a8` |
+| Bright Yellow  | Bright Amber     | ![#d8b860](https://placehold.co/16/d8b860/d8b860)  | `#d8b860` |
+| Bright Blue    | Bright Cobalt    | ![#8aa8c8](https://placehold.co/16/8aa8c8/8aa8c8)  | `#8aa8c8` |
+| Bright Magenta | Bright Ember     | ![#b888a0](https://placehold.co/16/b888a0/b888a0)  | `#b888a0` |
+| Bright Cyan    | Bright Patina    | ![#80b8b0](https://placehold.co/16/80b8b0/80b8b0)  | `#80b8b0` |
+| Bright White   | Bright Limestone | ![#e8e0d0](https://placehold.co/16/e8e0d0/e8e0d0)  | `#e8e0d0` |
 
 ### Design Principles
 
@@ -101,18 +158,12 @@ vim.cmd.colorscheme("ferric")
 
 ## Recommended Font Setup
 
-Pair with a **Comic Sans–style monospaced font** for the full aesthetic:
+Pair with **[Comic Code](https://tosche.net/fonts/comic-code)** monospaced font
+for the full aesthetic or one of the free alternatives:
 
-```lua
--- Comic Mono — a free, monospaced Comic Sans alternative
--- Install from: https://dtinth.github.io/comic-mono-font/
-vim.o.guifont = "Comic Mono:h16"
-
--- Alternative options (install separately):
---   vim.o.guifont = "Comic Code:h16"          -- commercial
---   vim.o.guifont = "Comic Shanns Mono:h16"   -- free alternative
-```
+- [Comic Mono](https://github.com/dtinth/comic-mono-font)
+- [Serious Shanns](https://github.com/kaBeech/serious-shanns)
 
 ## License
 
-MIT
+[MIT](LICENSE)
