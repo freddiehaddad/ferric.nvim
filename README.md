@@ -4,6 +4,17 @@ A metallurgy-inspired dark theme for [Neovim](https://neovim.io) inspired by
 the colors of the **Rust** programming language and the chemistry of iron
 oxidation.
 
+<details>
+  <summary>📸 Click to View Screenshots</summary>
+  <img width="3585" height="2140" alt="startscreen" src="https://github.com/user-attachments/assets/4d8e1298-e69e-4c9b-ae15-d83cc1aa9ad1" />
+  <img width="3585" height="2140" alt="rust+md" src="https://github.com/user-attachments/assets/0cd96254-3234-4f26-8dcb-6d54f9f30bd4" />
+  <img width="3585" height="2140" alt="lua" src="https://github.com/user-attachments/assets/de70dfb5-f343-438b-a794-fd6b290c03aa" />
+  <img width="3585" height="2140" alt="rust+cmp" src="https://github.com/user-attachments/assets/0cf909a3-35d6-4d0b-ad0b-1d6953dae4ac" />
+  <img width="3585" height="2140" alt="rust+md+diagnostic" src="https://github.com/user-attachments/assets/33a86948-cad7-4674-96ee-4b000fc2cda0" />
+  <img width="3585" height="2140" alt="telescope+find+files" src="https://github.com/user-attachments/assets/cd51bc90-ef20-4ff4-8911-cf349619fd05" />
+  <img width="3585" height="2140" alt="lazy+update" src="https://github.com/user-attachments/assets/1a9ca65c-381d-44e3-ad11-acf8c38ee525" />
+</details>
+
 ## The Vision
 
 **Ferric** draws from the **forge** — iron oxide, copper patina, heated metal,
