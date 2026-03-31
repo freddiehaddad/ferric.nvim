@@ -11,8 +11,7 @@ oxidation.
   <img width="3585" height="2140" alt="lua" src="https://github.com/user-attachments/assets/de70dfb5-f343-438b-a794-fd6b290c03aa" />
   <img width="3585" height="2140" alt="rust+cmp" src="https://github.com/user-attachments/assets/0cf909a3-35d6-4d0b-ad0b-1d6953dae4ac" />
   <img width="3585" height="2140" alt="rust+md+diagnostic" src="https://github.com/user-attachments/assets/33a86948-cad7-4674-96ee-4b000fc2cda0" />
-  <img width="3585" height="2140" alt="telescope+find+files" src="https://github.com/user-attachments/assets/cd51bc90-ef20-4ff4-8911-cf349619fd05" />
-  <img width="3585" height="2140" alt="lazy+update" src="https://github.com/user-attachments/assets/1a9ca65c-381d-44e3-ad11-acf8c38ee525" />
+  <img width="3585" height="2140" alt="md+lua+telescope" src="https://github.com/user-attachments/assets/242466ce-7d15-4435-83b6-d44ce3d63e1c" />
 </details>
 
 ## The Vision
