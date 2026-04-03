@@ -232,6 +232,9 @@ local function get_groups()
 		debugPC = { bg = p.forge },
 		debugBreakpoint = { fg = p.rust, bg = p.forge },
 
+		-- DAP
+		DapStoppedSign = { fg = p.verdigris, bg = p.crucible },
+
 		-- Diff filetype
 		diffAdded = { fg = p.verdigris },
 		diffRemoved = { fg = p.brick },
