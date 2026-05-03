@@ -257,51 +257,162 @@ local function get_groups()
 		markdownCodeBlock = { fg = p.patina },
 		markdownLinkText = { fg = p.cobalt, underline = true },
 
-		-- render-markdown.nvim
-		RenderMarkdownH1 = { fg = p.rust },
-		RenderMarkdownH2 = { fg = p.copper },
-		RenderMarkdownH3 = { fg = p.forge_amber },
-		RenderMarkdownH4 = { fg = p.verdigris },
-		RenderMarkdownH5 = { fg = p.cobalt },
-		RenderMarkdownH6 = { fg = p.patina },
-		RenderMarkdownH1Bg = { bg = p.smelt },
-		RenderMarkdownH2Bg = { bg = p.smelt },
-		RenderMarkdownH3Bg = { bg = p.smelt },
-		RenderMarkdownH4Bg = { bg = p.smelt },
-		RenderMarkdownH5Bg = { bg = p.smelt },
-		RenderMarkdownH6Bg = { bg = p.smelt },
-		RenderMarkdownCode = { bg = p.smelt },
-		RenderMarkdownCodeBorder = { link = "RenderMarkdownCode" },
-		RenderMarkdownCodeFallback = { fg = p.tarnish },
-		RenderMarkdownCodeInline = { bg = p.smelt },
-		RenderMarkdownCodeInfo = { fg = p.slag },
-		RenderMarkdownInlineHighlight = { link = "RenderMarkdownCodeInline" },
-		RenderMarkdownQuote = { fg = p.slag },
-		RenderMarkdownQuote1 = { link = "RenderMarkdownQuote" },
-		RenderMarkdownQuote2 = { link = "RenderMarkdownQuote" },
-		RenderMarkdownQuote3 = { link = "RenderMarkdownQuote" },
-		RenderMarkdownQuote4 = { link = "RenderMarkdownQuote" },
-		RenderMarkdownQuote5 = { link = "RenderMarkdownQuote" },
-		RenderMarkdownQuote6 = { link = "RenderMarkdownQuote" },
-		RenderMarkdownBullet = { fg = p.tarnish },
-		RenderMarkdownDash = { fg = p.mill_scale },
-		RenderMarkdownSign = { link = "SignColumn" },
-		RenderMarkdownIndent = { link = "Whitespace" },
-		RenderMarkdownHtmlComment = { link = "Comment" },
-		RenderMarkdownUnchecked = { fg = p.slag },
-		RenderMarkdownChecked = { fg = p.verdigris },
-		RenderMarkdownTodo = { fg = p.forge_amber },
-		RenderMarkdownTableHead = { fg = p.copper, bold = true },
-		RenderMarkdownTableRow = { fg = p.slag },
-		RenderMarkdownLink = { fg = p.cobalt },
-		RenderMarkdownLinkTitle = { fg = p.cobalt, underline = true },
-		RenderMarkdownWikiLink = { link = "RenderMarkdownLink" },
-		RenderMarkdownMath = { fg = p.cobalt },
-		RenderMarkdownSuccess = { link = "DiagnosticOk" },
-		RenderMarkdownInfo = { link = "DiagnosticInfo" },
-		RenderMarkdownHint = { link = "DiagnosticHint" },
-		RenderMarkdownWarn = { link = "DiagnosticWarn" },
-		RenderMarkdownError = { link = "DiagnosticError" },
+		-- markview.nvim
+		--
+		-- Each MarkviewPaletteN color slot maps to one of ferric's syntax tones,
+		-- aligned with the existing markdownH1-H6 progression so the plugin's
+		-- semantic links (callouts, checkboxes, list bullets) inherit naturally.
+		--
+		-- Slot semantics (from plugin source):
+		--   0 = neutral/default  (Comment-like)        slag
+		--   1 = error            (H1, Unchecked)       rust
+		--   2 = warn             (H2, Pending, ListMinus)   copper
+		--   3 = special          (H3, Subscript)       forge_amber
+		--   4 = ok               (H4, Checked, ListPlus)    verdigris
+		--   5 = note             (H5, Info)            cobalt
+		--   6 = hint             (H6, Progress, ListStar, Superscript)  patina
+		--   7 = conditional      (#tags, [[wikilinks]], ==highlights==) oxidized
+		--
+		-- Each slot N produces 4 sibling groups:
+		--   PaletteN     -- fg + bg, used as `hl_group` on spans or `line_hl_group` on lines
+		--   PaletteNFg   -- fg only, for icons / border chars / virt_text
+		--   PaletteNBg   -- bg only, for HTML heading node spans
+		--   PaletteNSign -- fg only, for sign column glyphs
+		--
+		-- Backgrounds are uniformly `smelt` so heading lines, ==highlights==,
+		-- and #tag pills sit on the same subtle warm band rather than rainbow.
+		MarkviewPalette0 = { fg = p.slag, bg = p.smelt },
+		MarkviewPalette0Fg = { fg = p.slag },
+		MarkviewPalette0Bg = { bg = p.smelt },
+		MarkviewPalette0Sign = { fg = p.slag },
+		MarkviewPalette1 = { fg = p.rust, bg = p.smelt },
+		MarkviewPalette1Fg = { fg = p.rust },
+		MarkviewPalette1Bg = { bg = p.smelt },
+		MarkviewPalette1Sign = { fg = p.rust },
+		MarkviewPalette2 = { fg = p.copper, bg = p.smelt },
+		MarkviewPalette2Fg = { fg = p.copper },
+		MarkviewPalette2Bg = { bg = p.smelt },
+		MarkviewPalette2Sign = { fg = p.copper },
+		MarkviewPalette3 = { fg = p.forge_amber, bg = p.smelt },
+		MarkviewPalette3Fg = { fg = p.forge_amber },
+		MarkviewPalette3Bg = { bg = p.smelt },
+		MarkviewPalette3Sign = { fg = p.forge_amber },
+		MarkviewPalette4 = { fg = p.verdigris, bg = p.smelt },
+		MarkviewPalette4Fg = { fg = p.verdigris },
+		MarkviewPalette4Bg = { bg = p.smelt },
+		MarkviewPalette4Sign = { fg = p.verdigris },
+		MarkviewPalette5 = { fg = p.cobalt, bg = p.smelt },
+		MarkviewPalette5Fg = { fg = p.cobalt },
+		MarkviewPalette5Bg = { bg = p.smelt },
+		MarkviewPalette5Sign = { fg = p.cobalt },
+		MarkviewPalette6 = { fg = p.patina, bg = p.smelt },
+		MarkviewPalette6Fg = { fg = p.patina },
+		MarkviewPalette6Bg = { bg = p.smelt },
+		MarkviewPalette6Sign = { fg = p.patina },
+		MarkviewPalette7 = { fg = p.oxidized, bg = p.smelt },
+		MarkviewPalette7Fg = { fg = p.oxidized },
+		MarkviewPalette7Bg = { bg = p.smelt },
+		MarkviewPalette7Sign = { fg = p.oxidized },
+
+		-- Headings: link applies palette fg+bg as the heading line bg
+		-- (`line_hl_group`) and as the icon char's fg+bg. Sign variants are
+		-- fg-only for the sign column glyph.
+		MarkviewHeading1 = { link = "MarkviewPalette1" },
+		MarkviewHeading2 = { link = "MarkviewPalette2" },
+		MarkviewHeading3 = { link = "MarkviewPalette3" },
+		MarkviewHeading4 = { link = "MarkviewPalette4" },
+		MarkviewHeading5 = { link = "MarkviewPalette5" },
+		MarkviewHeading6 = { link = "MarkviewPalette6" },
+		MarkviewHeading1Sign = { link = "MarkviewPalette1Sign" },
+		MarkviewHeading2Sign = { link = "MarkviewPalette2Sign" },
+		MarkviewHeading3Sign = { link = "MarkviewPalette3Sign" },
+		MarkviewHeading4Sign = { link = "MarkviewPalette4Sign" },
+		MarkviewHeading5Sign = { link = "MarkviewPalette5Sign" },
+		MarkviewHeading6Sign = { link = "MarkviewPalette6Sign" },
+
+		-- Code blocks:
+		--   MarkviewCode       -- bg only; painted as `line_hl_group` over the
+		--                         entire code body, padding spaces, and top/bottom
+		--                         delimiter lines.
+		--   MarkviewCodeInfo   -- inherits Code's bg and adds Comment-like fg;
+		--                         used for the language label text so it visually
+		--                         sits inside the code block rectangle.
+		--   MarkviewCodeFg     -- fg-only group whose fg equals MarkviewCode's bg;
+		--                         used for half-block chars (▄ ▀) so frontmatter
+		--                         borders appear to extend the code surface into
+		--                         the surrounding text.
+		--   MarkviewInlineCode -- fg + bg; the inline `code` "pill".
+		MarkviewCode = { bg = p.smelt },
+		MarkviewCodeInfo = { fg = p.slag, bg = p.smelt },
+		MarkviewCodeFg = { fg = p.smelt },
+		MarkviewInlineCode = { bg = p.smelt },
+
+		-- Block quotes / callouts: fg-only — applied to the `▋` border char,
+		-- the callout icon glyph, and the callout title text span.
+		MarkviewBlockQuoteDefault = { link = "MarkviewPalette0Fg" },
+		MarkviewBlockQuoteError = { link = "MarkviewPalette1Fg" },
+		MarkviewBlockQuoteWarn = { link = "MarkviewPalette2Fg" },
+		MarkviewBlockQuoteSpecial = { link = "MarkviewPalette3Fg" },
+		MarkviewBlockQuoteOk = { link = "MarkviewPalette4Fg" },
+		MarkviewBlockQuoteNote = { link = "MarkviewPalette5Fg" },
+
+		-- Checkboxes: fg-only — applied to the checkbox icon glyph and (for
+		-- checked/unchecked/cancelled) the trailing scope text.
+		MarkviewCheckboxCancelled = { link = "MarkviewPalette0Fg" },
+		MarkviewCheckboxUnchecked = { link = "MarkviewPalette1Fg" },
+		MarkviewCheckboxPending = { link = "MarkviewPalette2Fg" },
+		MarkviewCheckboxChecked = { link = "MarkviewPalette4Fg" },
+		MarkviewCheckboxProgress = { link = "MarkviewPalette6Fg" },
+		MarkviewCheckboxStriked = { fg = p.slag, strikethrough = true },
+
+		-- List bullets: fg-only — virt_text replacement char (●, ◈, ◇).
+		MarkviewListItemMinus = { link = "MarkviewPalette2Fg" },
+		MarkviewListItemPlus = { link = "MarkviewPalette4Fg" },
+		MarkviewListItemStar = { link = "MarkviewPalette6Fg" },
+
+		-- Tables: all five border-related groups must share one color so the
+		-- frame reads as a single line. The plugin uses MarkviewTableHeader
+		-- for the top/header/separator border characters and MarkviewTableBorder
+		-- for body/bottom/overlap border characters — *not* for header cell
+		-- text, which is rendered normally by treesitter.
+		MarkviewTableHeader = { fg = p.slag },
+		MarkviewTableBorder = { fg = p.slag },
+		MarkviewTableAlignLeft = { fg = p.slag },
+		MarkviewTableAlignCenter = { fg = p.slag },
+		MarkviewTableAlignRight = { fg = p.slag },
+
+		-- Links / images / emails: fg + underline — applied to both the
+		-- prefix icon glyph and the visible link label text.
+		MarkviewHyperlink = { fg = p.cobalt, underline = true },
+		MarkviewImage = { fg = p.cobalt, underline = true },
+		MarkviewEmail = { fg = p.cobalt, underline = true },
+
+		-- Subscript / superscript: fg-only — bracket chars + scope text.
+		MarkviewSubscript = { link = "MarkviewPalette3Fg" },
+		MarkviewSuperscript = { link = "MarkviewPalette6Fg" },
+
+		-- Code block language icons: bg matches MarkviewCode so the label
+		-- (icon + language name virt_text) sits visually inside the code
+		-- block rectangle; fg distinguishes the language by palette slot.
+		MarkviewIcon0 = { fg = p.slag, bg = p.smelt },
+		MarkviewIcon1 = { fg = p.rust, bg = p.smelt },
+		MarkviewIcon2 = { fg = p.copper, bg = p.smelt },
+		MarkviewIcon3 = { fg = p.forge_amber, bg = p.smelt },
+		MarkviewIcon4 = { fg = p.verdigris, bg = p.smelt },
+		MarkviewIcon5 = { fg = p.cobalt, bg = p.smelt },
+		MarkviewIcon6 = { fg = p.patina, bg = p.smelt },
+
+		-- Plugin-bug shims: these groups are referenced by the plugin's
+		-- default config but never created by it, so without these aliases
+		-- the corresponding decorations fall back to default text color.
+		MarkviewIcon3Fg = { link = "MarkviewPalette3Fg" }, -- horizontal_rules center icon
+		MarkviewSpecial = { link = "Special" },            -- latex.fonts.default.hl
+		MarkviewComment = { link = "Comment" },            -- latex.symbols.hl
+
+		-- MarkviewGradient0..9 are intentionally NOT defined here. The plugin
+		-- generates them dynamically by interpolating from `Normal` bg to
+		-- `Title` fg in Oklab space, producing a gradient that adapts to the
+		-- terminal's actual background (Title fg = verdigris in ferric).
 
 		-- CSV
 		csvCol0 = { fg = p.rust },
