@@ -33,8 +33,8 @@ local function get_groups()
 			p.cobalt,                         -- 4  blue
 			p.oxidized,                       -- 5  magenta
 			p.patina,                         -- 6  cyan
-			light and p.forge or p.limestone, -- 7  white
-			light and p.tarnish or p.slag,    -- 8  bright black
+			light and p.tarnish or p.limestone, -- 7  white
+			light and p.muted or p.slag,        -- 8  bright black
 			p.bright_rust,                    -- 9  bright red
 			p.bright_verdigris,               -- 10 bright green
 			p.bright_amber,                   -- 11 bright yellow

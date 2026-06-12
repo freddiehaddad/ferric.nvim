@@ -96,15 +96,15 @@ The name comes from *ferric* (Fe³⁺) — iron in its oxidized state. Rust.
 | Blue           | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0) `#6a88b0` | ![#2a4a78](https://placehold.co/16/2a4a78/2a4a78) `#2a4a78` |
 | Magenta        | ![#a16a89](https://placehold.co/16/a16a89/a16a89) `#a16a89` | ![#8a4870](https://placehold.co/16/8a4870/8a4870) `#8a4870` |
 | Cyan           | ![#5a98a0](https://placehold.co/16/5a98a0/5a98a0) `#5a98a0` | ![#066679](https://placehold.co/16/066679/066679) `#066679` |
-| White          | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) `#d0c8b8` | ![#ebe2cc](https://placehold.co/16/ebe2cc/ebe2cc) `#ebe2cc` |
-| Bright Black   | ![#8a8073](https://placehold.co/16/8a8073/8a8073) `#8a8073` | ![#6a5e50](https://placehold.co/16/6a5e50/6a5e50) `#6a5e50` |
+| White          | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) `#d0c8b8` | ![#6a5e50](https://placehold.co/16/6a5e50/6a5e50) `#6a5e50` |
+| Bright Black   | ![#8a8073](https://placehold.co/16/8a8073/8a8073) `#8a8073` | ![#746a5a](https://placehold.co/16/746a5a/746a5a) `#746a5a` |
 | Bright Red     | ![#d87068](https://placehold.co/16/d87068/d87068) `#d87068` | ![#753929](https://placehold.co/16/753929/753929) `#753929` |
 | Bright Green   | ![#80c8a8](https://placehold.co/16/80c8a8/80c8a8) `#80c8a8` | ![#00572b](https://placehold.co/16/00572b/00572b) `#00572b` |
 | Bright Yellow  | ![#d8b860](https://placehold.co/16/d8b860/d8b860) `#d8b860` | ![#614507](https://placehold.co/16/614507/614507) `#614507` |
 | Bright Blue    | ![#8aa8c8](https://placehold.co/16/8aa8c8/8aa8c8) `#8aa8c8` | ![#1a3a6a](https://placehold.co/16/1a3a6a/1a3a6a) `#1a3a6a` |
 | Bright Magenta | ![#b888a0](https://placehold.co/16/b888a0/b888a0) `#b888a0` | ![#6c3858](https://placehold.co/16/6c3858/6c3858) `#6c3858` |
 | Bright Cyan    | ![#80b8b0](https://placehold.co/16/80b8b0/80b8b0) `#80b8b0` | ![#005566](https://placehold.co/16/005566/005566) `#005566` |
-| Bright White   | ![#e8e0d0](https://placehold.co/16/e8e0d0/e8e0d0) `#e8e0d0` | ![#fcf6e2](https://placehold.co/16/fcf6e2/fcf6e2) `#fcf6e2` |
+| Bright White   | ![#e8e0d0](https://placehold.co/16/e8e0d0/e8e0d0) `#e8e0d0` | ![#3a3024](https://placehold.co/16/3a3024/3a3024) `#3a3024` |
 
 ## Installation
 

@@ -48,5 +48,5 @@ return {
 	bright_cobalt = "#1a3a6a",
 	bright_ember = "#6c3858",
 	bright_patina = "#005566",
-	bright_limestone = "#fcf6e2",
+	bright_limestone = "#3a3024",
 }
