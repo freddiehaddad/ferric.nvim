@@ -468,6 +468,7 @@ local function get_groups()
 		TelescopeResultsNormal = { fg = p.slag, bg = p.quench_dark },
 		TelescopeResultsTitle = { fg = p.rust, bold = true },
 		TelescopePreviewTitle = { fg = p.rust, bold = true },
+		TelescopePreviewLine = { bg = p.quench_bright },
 		TelescopeSelection = { fg = p.limestone, bg = p.quench_bright, bold = true },
 		TelescopeSelectionCaret = { fg = p.forge_amber, bg = p.quench_bright },
 		TelescopeMultiSelection = { fg = p.verdigris },
