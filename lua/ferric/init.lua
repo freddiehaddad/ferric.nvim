@@ -26,22 +26,22 @@ local function get_groups()
 
 	if config.terminal_colors then
 		local term_colors = {
-			light and p.limestone or p.void,  -- 0  black
-			p.brick,                          -- 1  red
-			p.verdigris,                      -- 2  green
-			p.forge_amber,                    -- 3  yellow
-			p.cobalt,                         -- 4  blue
-			p.oxidized,                       -- 5  magenta
-			p.patina,                         -- 6  cyan
+			light and p.limestone or p.void, -- 0  black
+			p.brick,       -- 1  red
+			p.verdigris,   -- 2  green
+			p.forge_amber, -- 3  yellow
+			p.cobalt,      -- 4  blue
+			p.oxidized,    -- 5  magenta
+			p.patina,      -- 6  cyan
 			light and p.tarnish or p.limestone, -- 7  white
-			light and p.muted or p.slag,        -- 8  bright black
-			p.bright_rust,                    -- 9  bright red
-			p.bright_verdigris,               -- 10 bright green
-			p.bright_amber,                   -- 11 bright yellow
-			p.bright_cobalt,                  -- 12 bright blue
-			p.bright_ember,                   -- 13 bright magenta
-			p.bright_patina,                  -- 14 bright cyan
-			p.bright_limestone,               -- 15 bright white
+			light and p.muted or p.slag, -- 8  bright black
+			p.bright_rust, -- 9  bright red
+			p.bright_verdigris, -- 10 bright green
+			p.bright_amber, -- 11 bright yellow
+			p.bright_cobalt, -- 12 bright blue
+			p.bright_oxidized, -- 13 bright magenta
+			p.bright_patina, -- 14 bright cyan
+			p.bright_limestone, -- 15 bright white
 		}
 
 		for index, color in ipairs(term_colors) do
@@ -78,11 +78,11 @@ local function get_groups()
 		Italic = { italic = true },
 		Underlined = { underline = true },
 		Cursor = { fg = p.void, bg = p.limestone },
-		CursorIM = { fg = p.void, bg = p.rust },
-		lCursor = { fg = p.void, bg = p.rust },
+		CursorIM = { fg = p.void, bg = p.copper },
+		lCursor = { fg = p.void, bg = p.copper },
 		CursorLine = { bg = p.crucible },
 		CursorColumn = { bg = p.crucible },
-		CursorLineNr = { fg = p.rust, bg = p.crucible, bold = true },
+		CursorLineNr = { fg = p.copper, bg = p.crucible, bold = true },
 		LineNr = { fg = p.mill_scale },
 		SignColumn = { fg = p.mill_scale },
 		ColorColumn = { bg = p.smelt },
@@ -157,7 +157,7 @@ local function get_groups()
 		-- Title
 		Title = { fg = p.verdigris, bold = true },
 		Directory = { fg = p.cobalt },
-		Tag = { fg = p.rust, bold = true },
+		Tag = { fg = p.copper, bold = true },
 
 		-- VCS state
 		Added = { fg = p.verdigris },
@@ -201,22 +201,22 @@ local function get_groups()
 		SpellRare = { sp = p.ember, undercurl = true },
 
 		-- Syntax
-		Comment = { fg = p.slag },
+		Comment = { fg = p.forge_amber },
 		Constant = { fg = p.ember },
-		Character = { fg = p.ember },
-		String = { fg = p.forge_amber },
+		Character = { fg = p.verdigris },
+		String = { fg = p.verdigris },
 		Identifier = { fg = p.tarnish },
-		Function = { fg = p.verdigris },
-		Statement = { fg = p.rust },
-		Conditional = { fg = p.rust },
-		Repeat = { fg = p.rust },
-		Label = { fg = p.rust },
-		Exception = { fg = p.rust },
-		Operator = { fg = p.cast_iron },
-		Keyword = { fg = p.rust },
-		PreProc = { fg = p.oxidized },
-		Include = { fg = p.oxidized },
-		Macro = { fg = p.oxidized },
+		Function = { fg = p.cobalt },
+		Statement = { fg = p.limestone },
+		Conditional = { fg = p.limestone },
+		Repeat = { fg = p.limestone },
+		Label = { fg = p.limestone },
+		Exception = { fg = p.limestone },
+		Operator = { fg = p.slag },
+		Keyword = { fg = p.limestone },
+		PreProc = { fg = p.limestone },
+		Include = { fg = p.limestone },
+		Macro = { fg = p.limestone },
 		Type = { fg = p.patina },
 		StorageClass = { fg = p.patina },
 		Structure = { fg = p.patina },
@@ -311,8 +311,8 @@ local function get_groups()
 		MarkviewInlineCode = { bg = p.smelt },
 		MarkviewBlockQuoteDefault = { link = "MarkviewPalette0Fg" },
 		MarkviewBlockQuoteError = { link = "MarkviewPalette1Fg" },
-		MarkviewBlockQuoteWarn = { link = "MarkviewPalette2Fg" },
-		MarkviewBlockQuoteSpecial = { link = "MarkviewPalette3Fg" },
+		MarkviewBlockQuoteWarn = { link = "MarkviewPalette3Fg" },
+		MarkviewBlockQuoteSpecial = { link = "MarkviewPalette6Fg" },
 		MarkviewBlockQuoteOk = { link = "MarkviewPalette4Fg" },
 		MarkviewBlockQuoteNote = { link = "MarkviewPalette5Fg" },
 		MarkviewCheckboxCancelled = { link = "MarkviewPalette0Fg" },
@@ -406,36 +406,36 @@ local function get_groups()
 		-- fzf-lua
 		FzfLuaNormal = { fg = p.limestone, bg = p.quench_dark },
 		FzfLuaBorder = { fg = p.quench_edge, bg = p.quench_dark },
-		FzfLuaTitle = { fg = p.rust, bg = p.quench_dark, bold = true },
+		FzfLuaTitle = { fg = p.copper, bg = p.quench_dark, bold = true },
 		FzfLuaTitleFlags = { fg = p.tarnish, bg = p.quench_dark },
 		FzfLuaBackdrop = { bg = p.void },
 		FzfLuaHelpNormal = { link = "FzfLuaNormal" },
 		FzfLuaHelpBorder = { link = "FzfLuaBorder" },
 		FzfLuaPreviewNormal = { fg = p.limestone, bg = p.quench_dark },
 		FzfLuaPreviewBorder = { fg = p.quench_edge, bg = p.quench_dark },
-		FzfLuaPreviewTitle = { fg = p.rust, bg = p.quench_dark, bold = true },
+		FzfLuaPreviewTitle = { fg = p.copper, bg = p.quench_dark, bold = true },
 		FzfLuaCursor = { link = "Cursor" },
 		FzfLuaCursorLine = { bg = p.quench_bright },
-		FzfLuaCursorLineNr = { fg = p.rust, bg = p.quench_bright, bold = true },
+		FzfLuaCursorLineNr = { fg = p.copper, bg = p.quench_bright, bold = true },
 		FzfLuaSearch = { link = "IncSearch" },
 		FzfLuaScrollBorderEmpty = { link = "FzfLuaBorder" },
 		FzfLuaScrollBorderFull = { link = "FzfLuaBorder" },
 		FzfLuaScrollFloatEmpty = { link = "PmenuSbar" },
 		FzfLuaScrollFloatFull = { bg = p.quench_mid },
 		FzfLuaDirIcon = { link = "Directory" },
-		FzfLuaDirPart = { link = "Comment" },
+		FzfLuaDirPart = { fg = p.slag },
 		FzfLuaFilePart = { fg = p.limestone },
 		FzfLuaHeaderBind = { fg = p.copper },
-		FzfLuaHeaderText = { fg = p.rust },
+		FzfLuaHeaderText = { fg = p.copper },
 		FzfLuaPathColNr = { fg = p.patina },
 		FzfLuaPathLineNr = { fg = p.verdigris },
-		FzfLuaLivePrompt = { fg = p.rust },
-		FzfLuaLiveSym = { fg = p.rust },
+		FzfLuaLivePrompt = { fg = p.copper },
+		FzfLuaLiveSym = { fg = p.copper },
 		FzfLuaBufId = { fg = p.slag },
 		FzfLuaBufName = { link = "Directory" },
 		FzfLuaBufLineNr = { link = "LineNr" },
 		FzfLuaBufNr = { fg = p.tarnish },
-		FzfLuaBufFlagCur = { fg = p.rust },
+		FzfLuaBufFlagCur = { fg = p.copper },
 		FzfLuaBufFlagAlt = { fg = p.cobalt },
 		FzfLuaTabTitle = { fg = p.copper, bold = true },
 		FzfLuaTabMarker = { fg = p.verdigris, bold = true },
@@ -451,10 +451,10 @@ local function get_groups()
 		FzfLuaFzfGutter = { link = "FzfLuaNormal" },
 		FzfLuaFzfHeader = { link = "FzfLuaTitle" },
 		FzfLuaFzfInfo = { fg = p.slag },
-		FzfLuaFzfPointer = { fg = p.rust },
+		FzfLuaFzfPointer = { fg = p.copper },
 		FzfLuaFzfMarker = { fg = p.verdigris },
-		FzfLuaFzfSpinner = { fg = p.rust },
-		FzfLuaFzfPrompt = { fg = p.rust },
+		FzfLuaFzfSpinner = { fg = p.copper },
+		FzfLuaFzfPrompt = { fg = p.copper },
 		FzfLuaFzfQuery = { fg = p.limestone },
 
 		-- telescope.nvim
@@ -462,15 +462,15 @@ local function get_groups()
 		TelescopeBorder = { fg = p.quench_edge, bg = p.quench_dark },
 		TelescopePromptNormal = { fg = p.limestone, bg = p.quench_dark },
 		TelescopePromptBorder = { fg = p.quench_edge, bg = p.quench_dark },
-		TelescopePromptPrefix = { fg = p.rust },
+		TelescopePromptPrefix = { fg = p.copper },
 		TelescopePromptCounter = { fg = p.slag },
-		TelescopePromptTitle = { fg = p.rust, bold = true },
+		TelescopePromptTitle = { fg = p.copper, bold = true },
 		TelescopeResultsNormal = { fg = p.slag, bg = p.quench_dark },
-		TelescopeResultsTitle = { fg = p.rust, bold = true },
-		TelescopePreviewTitle = { fg = p.rust, bold = true },
+		TelescopeResultsTitle = { fg = p.copper, bold = true },
+		TelescopePreviewTitle = { fg = p.copper, bold = true },
 		TelescopePreviewLine = { bg = p.quench_bright },
 		TelescopeSelection = { fg = p.limestone, bg = p.quench_bright, bold = true },
-		TelescopeSelectionCaret = { fg = p.forge_amber, bg = p.quench_bright },
+		TelescopeSelectionCaret = { fg = p.copper, bg = p.quench_bright },
 		TelescopeMultiSelection = { fg = p.verdigris },
 		TelescopeMultiIcon = { fg = p.verdigris },
 		TelescopeMatching = { fg = p.cobalt, bold = true },
@@ -494,10 +494,11 @@ local function get_groups()
 		BlinkCmpDocCursorLine = { bg = p.temper },
 		BlinkCmpSignatureHelp = { fg = p.limestone, bg = p.quench_dark },
 		BlinkCmpSignatureHelpBorder = { fg = p.quench_edge, bg = p.quench_dark },
-		BlinkCmpSignatureHelpActiveParameter = { fg = p.rust, bold = true },
+		BlinkCmpSignatureHelpActiveParameter = { fg = p.copper, bold = true },
 		BlinkCmpKind = { fg = p.copper },
-		BlinkCmpKindFunction = { fg = p.verdigris },
-		BlinkCmpKindMethod = { fg = p.verdigris },
+		BlinkCmpKindUnknown = { fg = p.copper },
+		BlinkCmpKindFunction = { fg = p.cobalt },
+		BlinkCmpKindMethod = { fg = p.cobalt },
 		BlinkCmpKindConstructor = { fg = p.patina },
 		BlinkCmpKindClass = { fg = p.patina },
 		BlinkCmpKindInterface = { fg = p.patina },
@@ -506,15 +507,15 @@ local function get_groups()
 		BlinkCmpKindTypeParameter = { fg = p.patina },
 		BlinkCmpKindVariable = { fg = p.limestone },
 		BlinkCmpKindText = { fg = p.limestone },
-		BlinkCmpKindModule = { fg = p.cobalt },
+		BlinkCmpKindModule = { fg = p.patina },
 		BlinkCmpKindConstant = { fg = p.ember },
 		BlinkCmpKindValue = { fg = p.ember },
 		BlinkCmpKindEnumMember = { fg = p.ember },
-		BlinkCmpKindKeyword = { fg = p.rust },
-		BlinkCmpKindEvent = { fg = p.rust },
-		BlinkCmpKindOperator = { fg = p.cast_iron },
-		BlinkCmpKindProperty = { fg = p.tarnish },
-		BlinkCmpKindField = { fg = p.tarnish },
+		BlinkCmpKindKeyword = { fg = p.oxidized },
+		BlinkCmpKindEvent = { fg = p.oxidized },
+		BlinkCmpKindOperator = { fg = p.slag },
+		BlinkCmpKindProperty = { fg = p.limestone },
+		BlinkCmpKindField = { fg = p.limestone },
 		BlinkCmpKindSnippet = { fg = p.patina },
 		BlinkCmpKindFile = { fg = p.cobalt },
 		BlinkCmpKindFolder = { fg = p.cobalt },
@@ -523,36 +524,73 @@ local function get_groups()
 		BlinkCmpKindUnit = { fg = p.cobalt },
 
 		-- mini.statusline
-		MiniStatuslineModeNormal = { fg = p.copper },
-		MiniStatuslineModeInsert = { fg = p.rust },
-		MiniStatuslineModeVisual = { fg = p.verdigris },
-		MiniStatuslineModeReplace = { fg = p.brick },
-		MiniStatuslineModeCommand = { fg = p.copper },
-		MiniStatuslineModeOther = { fg = p.oxidized },
+		MiniStatuslineModeNormal = { fg = p.void, bg = p.copper, bold = true },
+		MiniStatuslineModeInsert = { fg = p.void, bg = p.cobalt, bold = true },
+		MiniStatuslineModeVisual = { fg = p.void, bg = p.verdigris, bold = true },
+		MiniStatuslineModeReplace = { fg = p.void, bg = p.forge_amber, bold = true },
+		MiniStatuslineModeCommand = { fg = p.void, bg = p.patina, bold = true },
+		MiniStatuslineModeOther = { fg = p.void, bg = p.oxidized, bold = true },
 		MiniStatuslineDevinfo = { fg = p.tarnish },
 		MiniStatuslineFilename = { fg = p.tarnish },
 		MiniStatuslineFileinfo = { fg = p.tarnish },
 		MiniStatuslineInactive = { fg = p.slag },
 
 		-- mini.starter
-		MiniStarterHeader = { fg = p.rust },
-		MiniStarterFooter = { fg = p.rust },
+		MiniStarterHeader = { fg = p.copper },
+		MiniStarterFooter = { fg = p.copper },
 		MiniStarterSection = { fg = p.copper, bold = true },
-		MiniStarterItem = { fg = p.slag },
+		MiniStarterItem = { fg = p.limestone },
 		MiniStarterItemBullet = { fg = p.mill_scale },
-		MiniStarterItemPrefix = { fg = p.ember },
+		MiniStarterItemPrefix = { fg = p.copper, bold = true, underline = true },
 		MiniStarterCurrent = { fg = p.limestone, bg = p.crucible, bold = true },
-		MiniStarterQuery = { fg = p.forge_amber, bold = true },
+		MiniStarterQuery = { fg = p.cobalt, bold = true },
 		MiniStarterInactive = { fg = p.special },
 
 		-- Treesitter
+		["@comment.documentation"] = { fg = p.forge_amber },
+		["@string.documentation"] = { fg = p.forge_amber },
+		["@type.builtin"] = { fg = p.patina },
+		["@constructor"] = { fg = p.patina },
+		["@attribute"] = { fg = p.limestone },
+		["@attribute.builtin"] = { fg = p.limestone },
+		["@lsp.type.decorator"] = { fg = p.limestone },
 		["@variable"] = { fg = p.limestone },
-		["@variable.builtin"] = { fg = p.oxidized },
-		["@number"] = { fg = p.cobalt },
-		["@number.float"] = { fg = p.cobalt },
-		["@function.builtin"] = { fg = p.oxidized },
+		["@variable.builtin"] = { fg = p.limestone },
+		["@variable.parameter"] = { fg = p.cast_iron },
+		["@property"] = { fg = p.limestone },
+		["@number"] = { fg = p.ember },
+		["@number.float"] = { fg = p.ember },
+		["@function.builtin"] = { fg = p.limestone },
+		["@function.call"] = { fg = p.limestone },
+		["@function.method.call"] = { fg = p.limestone },
+		["@function.macro"] = { fg = p.limestone },
 		["@constant.builtin"] = { fg = p.ember },
-		["@punctuation.special"] = { fg = p.cast_iron },
+		["@constant.macro"] = { fg = p.limestone },
+		["@punctuation.special"] = { fg = p.slag },
+		["@keyword.conditional"] = { fg = p.limestone },
+		["@keyword.conditional.ternary"] = { fg = p.limestone },
+		["@keyword.repeat"] = { fg = p.limestone },
+		["@keyword.return"] = { fg = p.limestone },
+		["@keyword.exception"] = { fg = p.limestone },
+		["@keyword.modifier"] = { fg = p.limestone },
+		["@keyword.coroutine"] = { fg = p.limestone },
+
+		-- LSP semantic tokens
+		["@lsp.type.function"] = { fg = p.limestone },
+		["@lsp.type.method"] = { fg = p.limestone },
+		["@lsp.typemod.function.declaration"] = { fg = p.cobalt },
+		["@lsp.typemod.function.definition"] = { fg = p.cobalt },
+		["@lsp.typemod.method.declaration"] = { fg = p.cobalt },
+		["@lsp.typemod.method.definition"] = { fg = p.cobalt },
+		["@lsp.type.property"] = { fg = p.limestone },
+		["@lsp.type.macro"] = { fg = p.limestone },
+		["@lsp.type.parameter"] = { fg = p.cast_iron },
+		-- Hazard accent (oxidized/magenta): code the language flags as
+		-- handle-with-care. Rust's unsafe is the only trigger today; map other
+		-- languages' equivalents here to extend it.
+		["@lsp.mod.unsafe"] = { fg = p.oxidized },
+		["@lsp.typemod.keyword.controlFlow"] = { fg = p.limestone },
+		["@lsp.typemod.comment.documentation"] = { fg = p.forge_amber },
 
 		-- Diagnostics
 		DiagnosticError = { fg = p.rust },
@@ -560,6 +598,11 @@ local function get_groups()
 		DiagnosticInfo = { fg = p.cobalt },
 		DiagnosticHint = { fg = p.patina },
 		DiagnosticOk = { fg = p.verdigris },
+		DiagnosticSignError = { fg = p.rust },
+		DiagnosticSignWarn = { fg = p.forge_amber },
+		DiagnosticSignInfo = { fg = p.cobalt },
+		DiagnosticSignHint = { fg = p.patina },
+		DiagnosticSignOk = { fg = p.verdigris },
 		DiagnosticUnderlineError = { sp = p.rust, undercurl = true },
 		DiagnosticUnderlineWarn = { sp = p.forge_amber, undercurl = true },
 		DiagnosticUnderlineInfo = { sp = p.cobalt, undercurl = true },

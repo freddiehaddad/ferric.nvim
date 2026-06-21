@@ -6,16 +6,12 @@ oxidation. Ships with paired **dark** and **light** palettes.
 
 <details>
   <summary>📸 Click to View Screenshots</summary>
-  <p><em>Each image is split diagonally — light theme in the upper-left half,
-  dark theme in the lower-right half.</em></p>
-  <img alt="mini.starter screen — light theme top-left, dark theme bottom-right"
-  src="screenshots/1-combined.png" />
+  <p><em>Each image is split diagonally — light theme in the upper-left half, dark theme in the lower-right half.</em></p>
+  <img alt="mini.starter screen — light theme top-left, dark theme bottom-right" src="screenshots/1-combined.png" />
   <br>
-  <img alt="Rust source code with syntax highlighting"
-  src="screenshots/2-combined.png" />
+  <img alt="Rust source code with syntax highlighting" src="screenshots/2-combined.png" />
   <br>
-  <img alt="fzf-lua symbol picker with preview" src="screenshots/3-combined.png"
-  />
+  <img alt="fzf-lua symbol picker with preview" src="screenshots/3-combined.png" />
 </details>
 
 ## The Vision
@@ -27,83 +23,113 @@ temperature.
 
 The name comes from *ferric* (Fe³⁺) — iron in its oxidized state. Rust.
 
-## Dark Palette
+## Design Philosophy
+
+Ferric treats color as a tool, not decoration. It follows the argument in
+Nikita Prokopov's [*"I am sorry, but everyone is getting syntax highlighting
+wrong"*](https://tonsky.me/blog/syntax-highlighting/): if everything is
+highlighted, nothing stands out.
+
+- **Highlight what you read for** — comments, strings, numbers, constants, and
+  function/type *definitions*. These are the landmarks you scan for.
+- **Dim the machinery** — keywords (`if`, `for`, `let`, `pub`, `mut`), function
+  *calls*, variables, and punctuation fall back to plain text. Most code is
+  these; coloring them is noise.
+- **Reserve color for meaning** — red means *errors only*; magenta flags
+  *hazards* — code the language marks as handle-with-care, like Rust's
+  `unsafe`. Each rare color carries a single, unambiguous meaning.
+- **Hold the UI to the same standard** — the current line number, the selected
+  completion/picker item, diagnostics, and the active mode stand out; relative
+  line numbers, inactive windows, and decorative chrome recede.
+
+The payoff is calm code where the handful of things that matter genuinely pop.
+
+Highlighting is driven by **Treesitter** captures and **LSP semantic tokens**
+(with classic syntax groups as a fallback), so these rules apply to *any*
+language with a parser or language server — the definition-vs-call distinction,
+primitives, dimmed keywords, and macros all work the same in, e.g., C via
+`clangd` as in Rust via `rust-analyzer`. The lone language-specific accent today
+is the **hazard** color (magenta): it currently lights up Rust's `unsafe`, and
+is reserved for any equivalent "handle with care" construct other languages
+expose.
+
+## Palette
 
 ### Syntax
 
-| Role        | Dark                                                        | Light                                                       |
-| ----------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| Keywords    | ![#c15c42](https://placehold.co/16/c15c42/c15c42) `#c15c42` | ![#8f4632](https://placehold.co/16/8f4632/8f4632) `#8f4632` |
-| Functions   | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88) `#5aaa88` | ![#036836](https://placehold.co/16/036836/036836) `#036836` |
-| Strings     | ![#c8a040](https://placehold.co/16/c8a040/c8a040) `#c8a040` | ![#6a4c08](https://placehold.co/16/6a4c08/6a4c08) `#6a4c08` |
-| Numbers     | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0) `#6a88b0` | ![#2a4a78](https://placehold.co/16/2a4a78/2a4a78) `#2a4a78` |
-| Types       | ![#5a98a0](https://placehold.co/16/5a98a0/5a98a0) `#5a98a0` | ![#066679](https://placehold.co/16/066679/066679) `#066679` |
-| Constants   | ![#a76d4b](https://placehold.co/16/a76d4b/a76d4b) `#a76d4b` | ![#8c5634](https://placehold.co/16/8c5634/8c5634) `#8c5634` |
-| Preprocessor| ![#a16a89](https://placehold.co/16/a16a89/a16a89) `#a16a89` | ![#8a4870](https://placehold.co/16/8a4870/8a4870) `#8a4870` |
-| Builtins    | ![#a16a89](https://placehold.co/16/a16a89/a16a89) `#a16a89` | ![#8a4870](https://placehold.co/16/8a4870/8a4870) `#8a4870` |
-| Properties  | ![#948576](https://placehold.co/16/948576/948576) `#948576` | ![#6a5e50](https://placehold.co/16/6a5e50/6a5e50) `#6a5e50` |
-| Operators   | ![#6c7e75](https://placehold.co/16/6c7e75/6c7e75) `#6c7e75` | ![#656d68](https://placehold.co/16/656d68/656d68) `#656d68` |
-| Comments    | ![#8a8073](https://placehold.co/16/8a8073/8a8073) `#8a8073` | ![#726554](https://placehold.co/16/726554/726554) `#726554` |
-| Text        | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) `#d0c8b8` | ![#1f1a12](https://placehold.co/16/1f1a12/1f1a12) `#1f1a12` |
-| UI accent   | ![#c08c50](https://placehold.co/16/c08c50/c08c50) `#c08c50` | ![#8a5424](https://placehold.co/16/8a5424/8a5424) `#8a5424` |
+| Role              | Dark                                                        | Light                                                       |
+| ----------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| Comments          | ![#c7ab35](https://placehold.co/16/c7ab35/c7ab35) `#c7ab35` | ![#896d00](https://placehold.co/16/896d00/896d00) `#896d00` |
+| Strings           | ![#50b27a](https://placehold.co/16/50b27a/50b27a) `#50b27a` | ![#007c48](https://placehold.co/16/007c48/007c48) `#007c48` |
+| Numbers           | ![#cc7d2a](https://placehold.co/16/cc7d2a/cc7d2a) `#cc7d2a` | ![#934a00](https://placehold.co/16/934a00/934a00) `#934a00` |
+| Constants         | ![#cc7d2a](https://placehold.co/16/cc7d2a/cc7d2a) `#cc7d2a` | ![#934a00](https://placehold.co/16/934a00/934a00) `#934a00` |
+| Functions         | ![#5290d3](https://placehold.co/16/5290d3/5290d3) `#5290d3` | ![#1e5d9c](https://placehold.co/16/1e5d9c/1e5d9c) `#1e5d9c` |
+| Types             | ![#2ea3a9](https://placehold.co/16/2ea3a9/2ea3a9) `#2ea3a9` | ![#007379](https://placehold.co/16/007379/007379) `#007379` |
+| Parameters        | ![#8aa69a](https://placehold.co/16/8aa69a/8aa69a) `#8aa69a` | ![#375449](https://placehold.co/16/375449/375449) `#375449` |
+| Hazard            | ![#c16ca6](https://placehold.co/16/c16ca6/c16ca6) `#c16ca6` | ![#93427c](https://placehold.co/16/93427c/93427c) `#93427c` |
+| Keywords / macros | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) `#d0c8b8` | ![#1f1a12](https://placehold.co/16/1f1a12/1f1a12) `#1f1a12` |
+| Punctuation       | ![#8a8073](https://placehold.co/16/8a8073/8a8073) `#8a8073` | ![#726554](https://placehold.co/16/726554/726554) `#726554` |
+| Text              | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) `#d0c8b8` | ![#1f1a12](https://placehold.co/16/1f1a12/1f1a12) `#1f1a12` |
+| UI accent         | ![#c48e3f](https://placehold.co/16/c48e3f/c48e3f) `#c48e3f` | ![#895600](https://placehold.co/16/895600/895600) `#895600` |
 
 ### UI Surfaces
 
 | Role             | Dark                                                        | Light                                                       |
 | ---------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| Background       | ![#0e0c0a](https://placehold.co/16/0e0c0a/0e0c0a) `#0e0c0a` | ![#f4ecdc](https://placehold.co/16/f4ecdc/f4ecdc) `#f4ecdc` |
-| Tab bar          | ![#161210](https://placehold.co/16/161210/161210) `#161210` | ![#ebe2cc](https://placehold.co/16/ebe2cc/ebe2cc) `#ebe2cc` |
-| Floats / popups  | ![#16201e](https://placehold.co/16/16201e/16201e) `#16201e` | ![#e8e0cc](https://placehold.co/16/e8e0cc/e8e0cc) `#e8e0cc` |
-| Float borders    | ![#3a4240](https://placehold.co/16/3a4240/3a4240) `#3a4240` | ![#c0b596](https://placehold.co/16/c0b596/c0b596) `#c0b596` |
-| Scrollbar        | ![#1a2824](https://placehold.co/16/1a2824/1a2824) `#1a2824` | ![#d8cdb4](https://placehold.co/16/d8cdb4/d8cdb4) `#d8cdb4` |
-| Selection (menu) | ![#1e3830](https://placehold.co/16/1e3830/1e3830) `#1e3830` | ![#cdc4a8](https://placehold.co/16/cdc4a8/cdc4a8) `#cdc4a8` |
-| Color column     | ![#282220](https://placehold.co/16/282220/282220) `#282220` | ![#e0d4ba](https://placehold.co/16/e0d4ba/e0d4ba) `#e0d4ba` |
-| Cursor line      | ![#142420](https://placehold.co/16/142420/142420) `#142420` | ![#ece1c8](https://placehold.co/16/ece1c8/ece1c8) `#ece1c8` |
-| Visual selection | ![#3c2a1e](https://placehold.co/16/3c2a1e/3c2a1e) `#3c2a1e` | ![#e6d4b4](https://placehold.co/16/e6d4b4/e6d4b4) `#e6d4b4` |
-| Line numbers     | ![#8a7669](https://placehold.co/16/8a7669/8a7669) `#8a7669` | ![#7e6848](https://placehold.co/16/7e6848/7e6848) `#7e6848` |
+| Background       | ![#0e0c0a](https://placehold.co/16/0e0c0a/0e0c0a) `#0e0c0a` | ![#faf4e8](https://placehold.co/16/faf4e8/faf4e8) `#faf4e8` |
+| Tab bar          | ![#161210](https://placehold.co/16/161210/161210) `#161210` | ![#f1ead9](https://placehold.co/16/f1ead9/f1ead9) `#f1ead9` |
+| Floats / popups  | ![#16201e](https://placehold.co/16/16201e/16201e) `#16201e` | ![#eee8d9](https://placehold.co/16/eee8d9/eee8d9) `#eee8d9` |
+| Float borders    | ![#3a4240](https://placehold.co/16/3a4240/3a4240) `#3a4240` | ![#c5bda5](https://placehold.co/16/c5bda5/c5bda5) `#c5bda5` |
+| Scrollbar        | ![#1a2824](https://placehold.co/16/1a2824/1a2824) `#1a2824` | ![#ddd5c2](https://placehold.co/16/ddd5c2/ddd5c2) `#ddd5c2` |
+| Selection (menu) | ![#2e564a](https://placehold.co/16/2e564a/2e564a) `#2e564a` | ![#bdb189](https://placehold.co/16/bdb189/bdb189) `#bdb189` |
+| Color column     | ![#282220](https://placehold.co/16/282220/282220) `#282220` | ![#e5dcc9](https://placehold.co/16/e5dcc9/e5dcc9) `#e5dcc9` |
+| Cursor line      | ![#142420](https://placehold.co/16/142420/142420) `#142420` | ![#f1e9d6](https://placehold.co/16/f1e9d6/f1e9d6) `#f1e9d6` |
+| Visual selection | ![#3c2a1e](https://placehold.co/16/3c2a1e/3c2a1e) `#3c2a1e` | ![#eadcc4](https://placehold.co/16/eadcc4/eadcc4) `#eadcc4` |
+| Line numbers     | ![#595049](https://placehold.co/16/595049/595049) `#595049` | ![#958a81](https://placehold.co/16/958a81/958a81) `#958a81` |
+| Current line nr  | ![#c48e3f](https://placehold.co/16/c48e3f/c48e3f) `#c48e3f` | ![#895600](https://placehold.co/16/895600/895600) `#895600` |
 | Muted text       | ![#82796f](https://placehold.co/16/82796f/82796f) `#82796f` | ![#746a5a](https://placehold.co/16/746a5a/746a5a) `#746a5a` |
 | Ghost text       | ![#484040](https://placehold.co/16/484040/484040) `#484040` | ![#b0a48e](https://placehold.co/16/b0a48e/b0a48e) `#b0a48e` |
 
 ### Diagnostics
 
-| Role    | Swatch                                                      | Light                                                       |
+| Role    | Dark                                                        | Light                                                       |
 | ------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| Error   | ![#c15c42](https://placehold.co/16/c15c42/c15c42) `#c15c42` | ![#8f4632](https://placehold.co/16/8f4632/8f4632) `#8f4632` |
-| Warning | ![#c8a040](https://placehold.co/16/c8a040/c8a040) `#c8a040` | ![#6a4c08](https://placehold.co/16/6a4c08/6a4c08) `#6a4c08` |
-| Info    | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0) `#6a88b0` | ![#2a4a78](https://placehold.co/16/2a4a78/2a4a78) `#2a4a78` |
-| Hint    | ![#5a98a0](https://placehold.co/16/5a98a0/5a98a0) `#5a98a0` | ![#066679](https://placehold.co/16/066679/066679) `#066679` |
-| Ok      | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88) `#5aaa88` | ![#036836](https://placehold.co/16/036836/036836) `#036836` |
+| Error   | ![#cf4238](https://placehold.co/16/cf4238/cf4238) `#cf4238` | ![#8a0000](https://placehold.co/16/8a0000/8a0000) `#8a0000` |
+| Warning | ![#c7ab35](https://placehold.co/16/c7ab35/c7ab35) `#c7ab35` | ![#896d00](https://placehold.co/16/896d00/896d00) `#896d00` |
+| Info    | ![#5290d3](https://placehold.co/16/5290d3/5290d3) `#5290d3` | ![#1e5d9c](https://placehold.co/16/1e5d9c/1e5d9c) `#1e5d9c` |
+| Hint    | ![#2ea3a9](https://placehold.co/16/2ea3a9/2ea3a9) `#2ea3a9` | ![#007379](https://placehold.co/16/007379/007379) `#007379` |
+| Ok      | ![#50b27a](https://placehold.co/16/50b27a/50b27a) `#50b27a` | ![#007c48](https://placehold.co/16/007c48/007c48) `#007c48` |
 
 ### Git / Diff
 
 | Role           | Dark                                                        | Light                                                       |
 | -------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| Added          | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88) `#5aaa88` | ![#036836](https://placehold.co/16/036836/036836) `#036836` |
-| Changed        | ![#c8a040](https://placehold.co/16/c8a040/c8a040) `#c8a040` | ![#6a4c08](https://placehold.co/16/6a4c08/6a4c08) `#6a4c08` |
-| Deleted        | ![#ca5546](https://placehold.co/16/ca5546/ca5546) `#ca5546` | ![#a04030](https://placehold.co/16/a04030/a04030) `#a04030` |
-| Diff add bg    | ![#204838](https://placehold.co/16/204838/204838) `#204838` | ![#cce4d4](https://placehold.co/16/cce4d4/cce4d4) `#cce4d4` |
-| Diff change bg | ![#1a3838](https://placehold.co/16/1a3838/1a3838) `#1a3838` | ![#c4dcd8](https://placehold.co/16/c4dcd8/c4dcd8) `#c4dcd8` |
-| Diff delete bg | ![#5a2020](https://placehold.co/16/5a2020/5a2020) `#5a2020` | ![#f4ccc0](https://placehold.co/16/f4ccc0/f4ccc0) `#f4ccc0` |
+| Added          | ![#50b27a](https://placehold.co/16/50b27a/50b27a) `#50b27a` | ![#007c48](https://placehold.co/16/007c48/007c48) `#007c48` |
+| Changed        | ![#c7ab35](https://placehold.co/16/c7ab35/c7ab35) `#c7ab35` | ![#896d00](https://placehold.co/16/896d00/896d00) `#896d00` |
+| Deleted        | ![#d45443](https://placehold.co/16/d45443/d45443) `#d45443` | ![#9c1b10](https://placehold.co/16/9c1b10/9c1b10) `#9c1b10` |
+| Diff add bg    | ![#204838](https://placehold.co/16/204838/204838) `#204838` | ![#d4ecdc](https://placehold.co/16/d4ecdc/d4ecdc) `#d4ecdc` |
+| Diff change bg | ![#1a3838](https://placehold.co/16/1a3838/1a3838) `#1a3838` | ![#cce4e0](https://placehold.co/16/cce4e0/cce4e0) `#cce4e0` |
+| Diff delete bg | ![#5a2020](https://placehold.co/16/5a2020/5a2020) `#5a2020` | ![#fcd4c8](https://placehold.co/16/fcd4c8/fcd4c8) `#fcd4c8` |
 
 ### Terminal
 
 | Role           | Dark                                                        | Light                                                       |
 | -------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
 | Black          | ![#0e0c0a](https://placehold.co/16/0e0c0a/0e0c0a) `#0e0c0a` | ![#1f1a12](https://placehold.co/16/1f1a12/1f1a12) `#1f1a12` |
-| Red            | ![#ca5546](https://placehold.co/16/ca5546/ca5546) `#ca5546` | ![#a04030](https://placehold.co/16/a04030/a04030) `#a04030` |
-| Green          | ![#5aaa88](https://placehold.co/16/5aaa88/5aaa88) `#5aaa88` | ![#036836](https://placehold.co/16/036836/036836) `#036836` |
-| Yellow         | ![#c8a040](https://placehold.co/16/c8a040/c8a040) `#c8a040` | ![#6a4c08](https://placehold.co/16/6a4c08/6a4c08) `#6a4c08` |
-| Blue           | ![#6a88b0](https://placehold.co/16/6a88b0/6a88b0) `#6a88b0` | ![#2a4a78](https://placehold.co/16/2a4a78/2a4a78) `#2a4a78` |
-| Magenta        | ![#a16a89](https://placehold.co/16/a16a89/a16a89) `#a16a89` | ![#8a4870](https://placehold.co/16/8a4870/8a4870) `#8a4870` |
-| Cyan           | ![#5a98a0](https://placehold.co/16/5a98a0/5a98a0) `#5a98a0` | ![#066679](https://placehold.co/16/066679/066679) `#066679` |
+| Red            | ![#d45443](https://placehold.co/16/d45443/d45443) `#d45443` | ![#9c1b10](https://placehold.co/16/9c1b10/9c1b10) `#9c1b10` |
+| Green          | ![#50b27a](https://placehold.co/16/50b27a/50b27a) `#50b27a` | ![#007c48](https://placehold.co/16/007c48/007c48) `#007c48` |
+| Yellow         | ![#c7ab35](https://placehold.co/16/c7ab35/c7ab35) `#c7ab35` | ![#896d00](https://placehold.co/16/896d00/896d00) `#896d00` |
+| Blue           | ![#5290d3](https://placehold.co/16/5290d3/5290d3) `#5290d3` | ![#1e5d9c](https://placehold.co/16/1e5d9c/1e5d9c) `#1e5d9c` |
+| Magenta        | ![#c16ca6](https://placehold.co/16/c16ca6/c16ca6) `#c16ca6` | ![#93427c](https://placehold.co/16/93427c/93427c) `#93427c` |
+| Cyan           | ![#2ea3a9](https://placehold.co/16/2ea3a9/2ea3a9) `#2ea3a9` | ![#007379](https://placehold.co/16/007379/007379) `#007379` |
 | White          | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) `#d0c8b8` | ![#6a5e50](https://placehold.co/16/6a5e50/6a5e50) `#6a5e50` |
 | Bright Black   | ![#8a8073](https://placehold.co/16/8a8073/8a8073) `#8a8073` | ![#746a5a](https://placehold.co/16/746a5a/746a5a) `#746a5a` |
-| Bright Red     | ![#d87068](https://placehold.co/16/d87068/d87068) `#d87068` | ![#753929](https://placehold.co/16/753929/753929) `#753929` |
-| Bright Green   | ![#80c8a8](https://placehold.co/16/80c8a8/80c8a8) `#80c8a8` | ![#00572b](https://placehold.co/16/00572b/00572b) `#00572b` |
-| Bright Yellow  | ![#d8b860](https://placehold.co/16/d8b860/d8b860) `#d8b860` | ![#614507](https://placehold.co/16/614507/614507) `#614507` |
-| Bright Blue    | ![#8aa8c8](https://placehold.co/16/8aa8c8/8aa8c8) `#8aa8c8` | ![#1a3a6a](https://placehold.co/16/1a3a6a/1a3a6a) `#1a3a6a` |
-| Bright Magenta | ![#b888a0](https://placehold.co/16/b888a0/b888a0) `#b888a0` | ![#6c3858](https://placehold.co/16/6c3858/6c3858) `#6c3858` |
-| Bright Cyan    | ![#80b8b0](https://placehold.co/16/80b8b0/80b8b0) `#80b8b0` | ![#005566](https://placehold.co/16/005566/005566) `#005566` |
+| Bright Red     | ![#eb6956](https://placehold.co/16/eb6956/eb6956) `#eb6956` | ![#830000](https://placehold.co/16/830000/830000) `#830000` |
+| Bright Green   | ![#66c78e](https://placehold.co/16/66c78e/66c78e) `#66c78e` | ![#006633](https://placehold.co/16/006633/006633) `#006633` |
+| Bright Yellow  | ![#dcc04e](https://placehold.co/16/dcc04e/dcc04e) `#dcc04e` | ![#735700](https://placehold.co/16/735700/735700) `#735700` |
+| Bright Blue    | ![#66a4e9](https://placehold.co/16/66a4e9/66a4e9) `#66a4e9` | ![#004784](https://placehold.co/16/004784/004784) `#004784` |
+| Bright Magenta | ![#d780bb](https://placehold.co/16/d780bb/d780bb) `#d780bb` | ![#7b2c66](https://placehold.co/16/7b2c66/7b2c66) `#7b2c66` |
+| Bright Cyan    | ![#48b8be](https://placehold.co/16/48b8be/48b8be) `#48b8be` | ![#005d63](https://placehold.co/16/005d63/005d63) `#005d63` |
 | Bright White   | ![#e8e0d0](https://placehold.co/16/e8e0d0/e8e0d0) `#e8e0d0` | ![#3a3024](https://placehold.co/16/3a3024/3a3024) `#3a3024` |
 
 ## Installation

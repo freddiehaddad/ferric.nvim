@@ -2,51 +2,52 @@
 
 return {
 	-- Backgrounds (surfaces)
-	void = "#f4ecdc",
-	forge = "#ebe2cc",
-	smelt = "#e0d4ba",
-	crucible = "#ece1c8",
-	alloy = "#e6d4b4",
-	mill_scale = "#7e6848",
-	quench_dark = "#e8e0cc",
-	quench_bright = "#cdc4a8",
-	quench_mid = "#d8cdb4",
+	void = "#faf4e8",
+	forge = "#f1ead9",
+	smelt = "#e5dcc9",
+	crucible = "#f1e9d6",
+	alloy = "#eadcc4",
+	mill_scale = "#958a81",
+	quench_dark = "#eee8d9",
+	quench_bright = "#bdb189",
+	quench_mid = "#ddd5c2",
 
 	-- Border foreground
-	quench_edge = "#c0b596",
+	quench_edge = "#c5bda5",
 
 	-- Foregrounds
 	limestone = "#1f1a12",
 	tarnish = "#6a5e50",
 	muted = "#746a5a",
 	slag = "#726554",
+	bluing = "#496684",
 	special = "#b0a48e",
 
 	-- Syntax colors
-	rust = "#8f4632",
-	verdigris = "#036836",
-	forge_amber = "#6a4c08",
-	cobalt = "#2a4a78",
-	ember = "#8c5634",
-	patina = "#066679",
-	copper = "#8a5424",
+	rust = "#8a0000",
+	verdigris = "#007c48",
+	forge_amber = "#896d00",
+	cobalt = "#1e5d9c",
+	ember = "#934a00",
+	patina = "#007379",
+	copper = "#895600",
 
 	-- Semantic/state colors
-	cast_iron = "#656d68",
-	brick = "#a04030",
-	oxidized = "#8a4870",
+	cast_iron = "#375449",
+	brick = "#9c1b10",
+	oxidized = "#93427c",
 
 	-- Diff backgrounds
-	scale = "#f4ccc0",
-	quench = "#cce4d4",
-	temper = "#c4dcd8",
+	scale = "#fcd4c8",
+	quench = "#d4ecdc",
+	temper = "#cce4e0",
 
 	-- Bright terminal variants
-	bright_rust = "#753929",
-	bright_verdigris = "#00572b",
-	bright_amber = "#614507",
-	bright_cobalt = "#1a3a6a",
-	bright_ember = "#6c3858",
-	bright_patina = "#005566",
+	bright_rust = "#830000",
+	bright_verdigris = "#006633",
+	bright_amber = "#735700",
+	bright_cobalt = "#004784",
+	bright_oxidized = "#7b2c66",
+	bright_patina = "#005d63",
 	bright_limestone = "#3a3024",
 }
