@@ -324,7 +324,7 @@ local function get_groups()
 		MarkviewListItemMinus = { link = "MarkviewPalette2Fg" },
 		MarkviewListItemPlus = { link = "MarkviewPalette4Fg" },
 		MarkviewListItemStar = { link = "MarkviewPalette6Fg" },
-		MarkviewTableHeader = { fg = p.slag },
+		MarkviewTableHeader = { link = "Title" },
 		MarkviewTableBorder = { fg = p.slag },
 		MarkviewTableAlignLeft = { fg = p.slag },
 		MarkviewTableAlignCenter = { fg = p.slag },
