@@ -26,22 +26,24 @@ local function get_groups()
 
 	if config.terminal_colors then
 		local term_colors = {
-			light and p.limestone or p.void, -- 0  black
-			p.brick,       -- 1  red
-			p.verdigris,   -- 2  green
-			p.forge_amber, -- 3  yellow
-			p.cobalt,      -- 4  blue
-			p.oxidized,    -- 5  magenta
-			p.patina,      -- 6  cyan
+			--- @format disable
+			light and p.limestone or p.void,    -- 0  black
+			p.brick,                            -- 1  red
+			p.verdigris,                        -- 2  green
+			p.forge_amber,                      -- 3  yellow
+			p.cobalt,                           -- 4  blue
+			p.oxidized,                         -- 5  magenta
+			p.patina,                           -- 6  cyan
 			light and p.tarnish or p.limestone, -- 7  white
-			light and p.muted or p.slag, -- 8  bright black
-			p.bright_rust, -- 9  bright red
-			p.bright_verdigris, -- 10 bright green
-			p.bright_amber, -- 11 bright yellow
-			p.bright_cobalt, -- 12 bright blue
-			p.bright_oxidized, -- 13 bright magenta
-			p.bright_patina, -- 14 bright cyan
-			p.bright_limestone, -- 15 bright white
+			light and p.muted or p.slag,        -- 8  bright black
+			p.bright_rust,                      -- 9  bright red
+			p.bright_verdigris,                 -- 10 bright green
+			p.bright_amber,                     -- 11 bright yellow
+			p.bright_cobalt,                    -- 12 bright blue
+			p.bright_oxidized,                  -- 13 bright magenta
+			p.bright_patina,                    -- 14 bright cyan
+			p.bright_limestone,                 -- 15 bright white
+			--- @format enable
 		}
 
 		for index, color in ipairs(term_colors) do
@@ -585,9 +587,6 @@ local function get_groups()
 		["@lsp.type.property"] = { fg = p.limestone },
 		["@lsp.type.macro"] = { fg = p.limestone },
 		["@lsp.type.parameter"] = { fg = p.cast_iron },
-		-- Hazard accent (oxidized/magenta): code the language flags as
-		-- handle-with-care. Rust's unsafe is the only trigger today; map other
-		-- languages' equivalents here to extend it.
 		["@lsp.mod.unsafe"] = { fg = p.oxidized },
 		["@lsp.typemod.keyword.controlFlow"] = { fg = p.limestone },
 		["@lsp.typemod.comment.documentation"] = { fg = p.forge_amber },
