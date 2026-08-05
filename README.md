@@ -30,11 +30,14 @@ Nikita Prokopov's [*"I am sorry, but everyone is getting syntax highlighting
 wrong"*](https://tonsky.me/blog/syntax-highlighting/): if everything is
 highlighted, nothing stands out.
 
-- **Highlight what you read for** — comments, strings, numbers, constants, and
-  function/type *definitions*. These are the landmarks you scan for.
-- **Dim the machinery** — keywords (`if`, `for`, `let`, `pub`, `mut`), function
-  *calls*, variables, and punctuation fall back to plain text. Most code is
-  these; coloring them is noise.
+- **Highlight what you read for** — explanatory comments, strings, numbers,
+  constants, bindings, and function/type *definitions*. These are the landmarks
+  you scan for. Longer documentation prose recedes while its embedded markup
+  remains distinct.
+- **Dim the machinery** — function *calls*, variable uses, most keywords, and
+  punctuation fall back to plain or subdued text. Control-flow keywords receive
+  only a restrained structural cue. Most code is machinery; strongly coloring
+  it is noise.
 - **Reserve color for meaning** — red means *errors only*; magenta flags
   *hazards* — code the language marks as handle-with-care, like Rust's
   `unsafe`. Each rare color carries a single, unambiguous meaning.
@@ -60,12 +63,14 @@ expose.
 | Role              | Dark                                                        | Light                                                       |
 | ----------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
 | Comments          | ![#c7ab35](https://placehold.co/16/c7ab35/c7ab35) `#c7ab35` | ![#896d00](https://placehold.co/16/896d00/896d00) `#896d00` |
+| Documentation     | ![#948576](https://placehold.co/16/948576/948576) `#948576` | ![#6a5e50](https://placehold.co/16/6a5e50/6a5e50) `#6a5e50` |
 | Strings           | ![#50b27a](https://placehold.co/16/50b27a/50b27a) `#50b27a` | ![#007c48](https://placehold.co/16/007c48/007c48) `#007c48` |
 | Numbers           | ![#cc7d2a](https://placehold.co/16/cc7d2a/cc7d2a) `#cc7d2a` | ![#934a00](https://placehold.co/16/934a00/934a00) `#934a00` |
 | Constants         | ![#cc7d2a](https://placehold.co/16/cc7d2a/cc7d2a) `#cc7d2a` | ![#934a00](https://placehold.co/16/934a00/934a00) `#934a00` |
 | Functions         | ![#5290d3](https://placehold.co/16/5290d3/5290d3) `#5290d3` | ![#1e5d9c](https://placehold.co/16/1e5d9c/1e5d9c) `#1e5d9c` |
 | Types             | ![#2ea3a9](https://placehold.co/16/2ea3a9/2ea3a9) `#2ea3a9` | ![#007379](https://placehold.co/16/007379/007379) `#007379` |
-| Parameters        | ![#8aa69a](https://placehold.co/16/8aa69a/8aa69a) `#8aa69a` | ![#375449](https://placehold.co/16/375449/375449) `#375449` |
+| Bindings / params | ![#8aa69a](https://placehold.co/16/8aa69a/8aa69a) `#8aa69a` | ![#375449](https://placehold.co/16/375449/375449) `#375449` |
+| Control flow      | ![#7693ad](https://placehold.co/16/7693ad/7693ad) `#7693ad` | ![#496684](https://placehold.co/16/496684/496684) `#496684` |
 | Hazard            | ![#c16ca6](https://placehold.co/16/c16ca6/c16ca6) `#c16ca6` | ![#93427c](https://placehold.co/16/93427c/93427c) `#93427c` |
 | Keywords / macros | ![#d0c8b8](https://placehold.co/16/d0c8b8/d0c8b8) `#d0c8b8` | ![#1f1a12](https://placehold.co/16/1f1a12/1f1a12) `#1f1a12` |
 | Punctuation       | ![#8a8073](https://placehold.co/16/8a8073/8a8073) `#8a8073` | ![#726554](https://placehold.co/16/726554/726554) `#726554` |

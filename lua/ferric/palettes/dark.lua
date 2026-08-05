@@ -27,6 +27,7 @@ return {
 	rust = "#cf4238",
 	verdigris = "#50b27a",
 	forge_amber = "#c7ab35",
+	documentation = "#948576",
 	cobalt = "#5290d3",
 	ember = "#cc7d2a",
 	patina = "#2ea3a9",

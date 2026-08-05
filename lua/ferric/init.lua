@@ -210,10 +210,10 @@ local function get_groups()
 		Identifier = { fg = p.tarnish },
 		Function = { fg = p.cobalt },
 		Statement = { fg = p.limestone },
-		Conditional = { fg = p.limestone },
-		Repeat = { fg = p.limestone },
+		Conditional = { fg = p.bluing },
+		Repeat = { fg = p.bluing },
 		Label = { fg = p.limestone },
-		Exception = { fg = p.limestone },
+		Exception = { fg = p.bluing },
 		Operator = { fg = p.slag },
 		Keyword = { fg = p.limestone },
 		PreProc = { fg = p.limestone },
@@ -549,8 +549,8 @@ local function get_groups()
 		MiniStarterInactive = { fg = p.special },
 
 		-- Treesitter
-		["@comment.documentation"] = { fg = p.forge_amber },
-		["@string.documentation"] = { fg = p.forge_amber },
+		["@comment.documentation"] = { fg = p.documentation },
+		["@string.documentation"] = { fg = p.documentation },
 		["@type.builtin"] = { fg = p.patina },
 		["@constructor"] = { fg = p.patina },
 		["@attribute"] = { fg = p.limestone },
@@ -558,6 +558,7 @@ local function get_groups()
 		["@lsp.type.decorator"] = { fg = p.limestone },
 		["@variable"] = { fg = p.limestone },
 		["@variable.builtin"] = { fg = p.limestone },
+		["@variable.declaration"] = { fg = p.cast_iron },
 		["@variable.parameter"] = { fg = p.cast_iron },
 		["@property"] = { fg = p.limestone },
 		["@number"] = { fg = p.ember },
@@ -569,15 +570,23 @@ local function get_groups()
 		["@constant.builtin"] = { fg = p.ember },
 		["@constant.macro"] = { fg = p.limestone },
 		["@punctuation.special"] = { fg = p.slag },
-		["@keyword.conditional"] = { fg = p.limestone },
-		["@keyword.conditional.ternary"] = { fg = p.limestone },
-		["@keyword.repeat"] = { fg = p.limestone },
-		["@keyword.return"] = { fg = p.limestone },
-		["@keyword.exception"] = { fg = p.limestone },
+		["@keyword.conditional"] = { fg = p.bluing },
+		["@keyword.conditional.ternary"] = { fg = p.bluing },
+		["@keyword.repeat"] = { fg = p.bluing },
+		["@keyword.return"] = { fg = p.bluing },
+		["@keyword.exception"] = { fg = p.bluing },
 		["@keyword.modifier"] = { fg = p.limestone },
-		["@keyword.coroutine"] = { fg = p.limestone },
+		["@keyword.coroutine"] = { fg = p.bluing },
 
 		-- LSP semantic tokens
+		-- Cleared: some servers (e.g. lua_ls) tag every comment as this bare
+		-- type with no "documentation" modifier. Since semantic tokens
+		-- outrank Treesitter, an amber fg here would mask Treesitter's own
+		-- correct comment vs. comment.documentation distinction. Leaving it
+		-- empty lets that classification show through; servers that *do*
+		-- emit a documentation modifier (e.g. rust-analyzer) still win via
+		-- the higher-priority @lsp.typemod.comment.documentation below.
+		["@lsp.type.comment"] = {},
 		["@lsp.type.function"] = { fg = p.limestone },
 		["@lsp.type.method"] = { fg = p.limestone },
 		["@lsp.typemod.function.declaration"] = { fg = p.cobalt },
@@ -587,9 +596,11 @@ local function get_groups()
 		["@lsp.type.property"] = { fg = p.limestone },
 		["@lsp.type.macro"] = { fg = p.limestone },
 		["@lsp.type.parameter"] = { fg = p.cast_iron },
+		["@lsp.typemod.variable.declaration"] = { fg = p.cast_iron },
+		["@lsp.typemod.variable.definition"] = { fg = p.cast_iron },
 		["@lsp.mod.unsafe"] = { fg = p.oxidized },
-		["@lsp.typemod.keyword.controlFlow"] = { fg = p.limestone },
-		["@lsp.typemod.comment.documentation"] = { fg = p.forge_amber },
+		["@lsp.typemod.keyword.controlFlow"] = { fg = p.bluing },
+		["@lsp.typemod.comment.documentation"] = { fg = p.documentation },
 
 		-- Diagnostics
 		DiagnosticError = { fg = p.rust },
