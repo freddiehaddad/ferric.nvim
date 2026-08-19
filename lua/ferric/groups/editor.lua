@@ -2,139 +2,107 @@ local M = {}
 
 function M.get(p)
 	return {
-		-- Links
-		Boolean = { link = "Constant" },
-		CursorLineFold = { fg = p.tarnish, bg = p.crucible },
-		CursorLineSign = { bg = p.crucible },
-		Debug = { link = "Special" },
-		Define = { link = "PreProc" },
-		Float = { link = "Constant" },
-		Ignore = { link = "Comment" },
-		IncSearch = { link = "CurSearch" },
-		LineNrAbove = { link = "LineNr" },
-		LineNrBelow = { link = "LineNr" },
-		Number = { link = "Constant" },
-		PopupNotification = { link = "WarningMsg" },
-		PreCondit = { link = "PreProc" },
-		SpecialChar = { link = "Special" },
-		SpecialComment = { link = "Special" },
-		SpecialKey = { link = "NonText" },
-		StatusLineTerm = { link = "StatusLine" },
-		StatusLineTermNC = { link = "StatusLineNC" },
-		Terminal = { link = "Normal" },
-		Typedef = { link = "Type" },
+		Normal = { fg = p.fg, bg = p.bg },
+		NormalNC = { fg = p.fg, bg = p.bg },
+		NormalFloat = { fg = p.fg, bg = p.float_bg },
+		FloatBorder = { fg = p.border, bg = p.float_bg },
+		FloatTitle = { fg = p.ui_accent, bg = p.float_bg, bold = true },
+		FloatFooter = { fg = p.grey, bg = p.float_bg },
+		FloatShadow = { bg = p.bg_alt, blend = 80 },
+		FloatShadowThrough = { bg = p.bg_alt, blend = 100 },
 
-		-- Editor
-		Normal = { fg = p.limestone, bg = p.void },
 		Bold = { bold = true },
 		Italic = { italic = true },
 		Underlined = { underline = true },
-		Cursor = { fg = p.void, bg = p.limestone },
-		CursorIM = { fg = p.void, bg = p.copper },
-		lCursor = { fg = p.void, bg = p.copper },
-		CursorLine = { bg = p.crucible },
-		CursorColumn = { bg = p.crucible },
-		CursorLineNr = { fg = p.copper, bg = p.crucible, bold = true },
-		LineNr = { fg = p.mill_scale },
-		SignColumn = { fg = p.mill_scale },
-		ColorColumn = { bg = p.smelt },
+		Cursor = { fg = p.bg, bg = p.fg },
+		CursorIM = { fg = p.bg, bg = p.ui_accent },
+		lCursor = { fg = p.bg, bg = p.ui_accent },
+		CursorLine = { bg = p.bg_soft },
+		CursorColumn = { bg = p.bg_soft },
+		CursorLineNr = { fg = p.ui_accent, bg = p.bg_soft, bold = true },
+		CursorLineFold = { fg = p.grey_light, bg = p.bg_soft },
+		CursorLineSign = { bg = p.bg_soft },
+
+		LineNr = { fg = p.line_number },
+		LineNrAbove = { link = "LineNr" },
+		LineNrBelow = { link = "LineNr" },
+		SignColumn = { fg = p.line_number, bg = p.bg },
+		FoldColumn = { fg = p.grey, bg = p.bg },
+		Folded = { fg = p.grey_light, bg = p.surface },
+		ColorColumn = { bg = p.surface },
 		EndOfBuffer = { fg = p.special },
 		NonText = { fg = p.special },
-		Conceal = { fg = p.muted },
-		VertSplit = { fg = p.smelt },
+		Whitespace = { fg = p.special },
+		SpecialKey = { fg = p.special },
+		Conceal = { fg = p.grey },
 
-		-- Floating windows
-		NormalFloat = { fg = p.limestone, bg = p.quench_dark },
-		FloatBorder = { fg = p.quench_edge, bg = p.quench_dark },
-		FloatShadow = { bg = p.forge, blend = 80 },
-		FloatShadowThrough = { bg = p.forge, blend = 100 },
+		WinBar = { fg = p.grey_light, bg = p.bg_alt, bold = true },
+		WinBarNC = { fg = p.grey, bg = p.bg_alt },
+		WinSeparator = { fg = p.border, bg = p.bg },
+		VertSplit = { link = "WinSeparator" },
 
-		-- Window bar
-		WinBar = { fg = p.tarnish, bg = p.quench_dark, bold = true },
-		WinBarNC = { fg = p.tarnish, bg = p.quench_dark },
+		Search = { fg = p.bg, bg = p.warning },
+		CurSearch = { fg = p.bg, bg = p.ui_accent, bold = true },
+		IncSearch = { link = "CurSearch" },
+		Substitute = { fg = p.bg, bg = p.error },
+		MatchParen = { fg = p.ui_accent, bg = p.visual, bold = true },
+		Visual = { bg = p.visual },
+		VisualNOS = { bg = p.visual },
+		QuickFixLine = { bg = p.bg_soft, bold = true },
 
-		-- Folds
-		Folded = { fg = p.tarnish, bg = p.crucible },
-		FoldColumn = { fg = p.tarnish },
+		Pmenu = { fg = p.fg, bg = p.float_bg },
+		PmenuSel = { fg = p.fg_bright, bg = p.selection, bold = true },
+		PmenuKind = { fg = p.type, bg = p.float_bg },
+		PmenuKindSel = { fg = p.type, bg = p.selection, bold = true },
+		PmenuExtra = { fg = p.grey, bg = p.float_bg },
+		PmenuExtraSel = { fg = p.grey_light, bg = p.selection },
+		PmenuMatch = { fg = p.keyword, bg = p.float_bg, bold = true },
+		PmenuMatchSel = { fg = p.keyword, bg = p.selection, bold = true },
+		PmenuSbar = { bg = p.float_bg },
+		PmenuThumb = { bg = p.scrollbar },
+		WildMenu = { fg = p.fg_bright, bg = p.selection, bold = true },
 
-		-- Search
-		Search = { fg = p.void, bg = p.forge_amber },
-		CurSearch = { fg = p.void, bg = p.copper },
+		StatusLine = { fg = p.fg, bg = p.bg_alt },
+		StatusLineNC = { fg = p.grey, bg = p.bg_alt },
+		StatusLineTerm = { link = "StatusLine" },
+		StatusLineTermNC = { link = "StatusLineNC" },
+		TabLineFill = { bg = p.bg_alt },
+		TabLine = { fg = p.grey, bg = p.bg_alt },
+		TabLineSel = { fg = p.fg_bright, bg = p.bg, bold = true },
 
-		-- Selection
-		Visual = { bg = p.alloy },
-		VisualNOS = { bg = p.alloy, bold = true },
-		MatchParen = { fg = p.copper, bg = p.alloy, bold = true },
+		MsgArea = { fg = p.fg, bg = p.bg },
+		MsgSeparator = { fg = p.border, bg = p.bg_alt },
+		ModeMsg = { fg = p.fg_bright, bold = true },
+		MoreMsg = { fg = p.info },
+		Question = { fg = p.ui_accent },
+		ErrorMsg = { fg = p.error, bold = true },
+		WarningMsg = { fg = p.warning },
+		PopupNotification = { link = "WarningMsg" },
 
-		-- Popup menu
-		Pmenu = { fg = p.limestone, bg = p.quench_dark },
-		PmenuSel = { bg = p.quench_bright, bold = true },
-		PmenuKind = { fg = p.copper },
-		PmenuKindSel = { fg = p.copper, bold = true },
-		PmenuMatch = { fg = p.cobalt, bold = true },
-		PmenuMatchSel = { bold = true },
-		PmenuExtra = { fg = p.slag },
-		PmenuExtraSel = { fg = p.slag, bold = true },
-		PmenuSbar = {},
-		PmenuThumb = { bg = p.quench_mid },
+		Title = { fg = p.link, bold = true },
+		Directory = { fg = p.func },
+		Tag = { fg = p.link, bold = true },
+		ToolbarButton = { fg = p.bg, bg = p.ui_accent, bold = true },
+		ToolbarLine = { bg = p.surface },
 
-		-- Status line
-		StatusLine = { fg = p.limestone },
-		StatusLineNC = { fg = p.slag },
+		Added = { fg = p.git_add },
+		Changed = { fg = p.git_change },
+		Removed = { fg = p.git_delete },
+		DiffAdd = { bg = p.diff_add },
+		DiffChange = { bg = p.diff_change },
+		DiffDelete = { bg = p.diff_delete },
+		DiffText = { bg = p.selection, bold = true },
 
-		-- Tab line
-		TabLineFill = { bg = p.forge },
-		TabLine = { fg = p.slag, bg = p.forge },
-		TabLineSel = { fg = p.limestone },
+		SpellBad = { sp = p.error, undercurl = true },
+		SpellCap = { sp = p.info, undercurl = true },
+		SpellLocal = { sp = p.hint, undercurl = true },
+		SpellRare = { sp = p.warning, undercurl = true },
 
-		-- Title bar
-		TitleBar = { fg = p.limestone },
-		TitleBarNC = { fg = p.slag },
-
-		-- Wild menu
-		WildMenu = { bg = p.alloy },
-
-		-- Messages
-		ModeMsg = { fg = p.limestone, bold = true },
-		MoreMsg = { fg = p.forge_amber },
-		Question = { fg = p.copper },
-		ErrorMsg = { fg = p.rust, bold = true },
-		WarningMsg = { fg = p.forge_amber },
-
-		-- Toolbar
-		ToolbarButton = { fg = p.limestone },
-		ToolbarLine = {},
-
-		-- Title
-		Title = { fg = p.verdigris, bold = true },
-		Directory = { fg = p.cobalt },
-		Tag = { fg = p.copper, bold = true },
-
-		-- VCS state
-		Added = { fg = p.verdigris },
-		Changed = { fg = p.forge_amber },
-		Removed = { fg = p.brick },
-
-		-- Diff
-		DiffAdd = { bg = p.quench },
-		DiffChange = { bg = p.temper },
-		DiffDelete = { bg = p.scale },
-		DiffText = { fg = p.void, bg = p.forge_amber },
-
-		-- Spell
-		SpellBad = { sp = p.rust, undercurl = true },
-		SpellCap = { sp = p.cobalt, undercurl = true },
-		SpellLocal = { sp = p.patina, undercurl = true },
-		SpellRare = { sp = p.ember, undercurl = true },
-
-		-- Quickfix
-		QuickFixLine = { bg = p.crucible, bold = true },
-		qfFileName = { fg = p.cobalt },
-		qfLineNr = { fg = p.forge_amber },
-
-		-- Debug
-		debugPC = { bg = p.forge },
-		debugBreakpoint = { fg = p.rust, bg = p.forge },
+		qfFileName = { fg = p.func },
+		qfLineNr = { fg = p.number },
+		debugPC = { bg = p.bg_soft },
+		debugBreakpoint = { fg = p.error, bg = p.bg_soft },
+		Terminal = { link = "Normal" },
 	}
 end
 

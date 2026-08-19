@@ -1,8 +1,12 @@
 local M = {}
 
-function M.get(p)
+function M.get()
 	return {
-		DapStoppedSign = { fg = p.verdigris, bg = p.crucible },
+		DapBreakpoint = { link = "DiagnosticError" },
+		DapBreakpointCondition = { link = "DiagnosticWarn" },
+		DapBreakpointRejected = { link = "Comment" },
+		DapLogPoint = { link = "DiagnosticInfo" },
+		DapStopped = { link = "DiagnosticOk" },
 	}
 end
 

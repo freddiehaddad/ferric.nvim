@@ -3,27 +3,27 @@ local M = {}
 function M.get(p)
 	return {
 		-- mini.statusline
-		MiniStatuslineModeNormal = { fg = p.void, bg = p.copper, bold = true },
-		MiniStatuslineModeInsert = { fg = p.void, bg = p.cobalt, bold = true },
-		MiniStatuslineModeVisual = { fg = p.void, bg = p.verdigris, bold = true },
-		MiniStatuslineModeReplace = { fg = p.void, bg = p.forge_amber, bold = true },
-		MiniStatuslineModeCommand = { fg = p.void, bg = p.patina, bold = true },
-		MiniStatuslineModeOther = { fg = p.void, bg = p.oxidized, bold = true },
-		MiniStatuslineDevinfo = { fg = p.tarnish },
-		MiniStatuslineFilename = { fg = p.tarnish },
-		MiniStatuslineFileinfo = { fg = p.tarnish },
-		MiniStatuslineInactive = { fg = p.slag },
+		MiniStatuslineModeNormal = { fg = p.bg, bg = p.ui_accent, bold = true },
+		MiniStatuslineModeInsert = { fg = p.bg, bg = p.ok, bold = true },
+		MiniStatuslineModeVisual = { fg = p.bg, bg = p.type, bold = true },
+		MiniStatuslineModeReplace = { fg = p.bg, bg = p.error, bold = true },
+		MiniStatuslineModeCommand = { fg = p.bg, bg = p.warning, bold = true },
+		MiniStatuslineModeOther = { fg = p.bg, bg = p.info, bold = true },
+		MiniStatuslineDevinfo = { fg = p.grey_light, bg = p.bg_alt },
+		MiniStatuslineFilename = { fg = p.fg, bg = p.bg_alt },
+		MiniStatuslineFileinfo = { fg = p.grey_light, bg = p.bg_alt },
+		MiniStatuslineInactive = { fg = p.grey, bg = p.bg_alt },
 
 		-- mini.starter
-		MiniStarterHeader = { fg = p.copper },
-		MiniStarterFooter = { fg = p.copper },
-		MiniStarterSection = { fg = p.copper, bold = true },
-		MiniStarterItem = { fg = p.limestone },
-		MiniStarterItemBullet = { fg = p.mill_scale },
-		MiniStarterItemPrefix = { fg = p.copper, bold = true, underline = true },
-		MiniStarterCurrent = { fg = p.limestone, bg = p.crucible, bold = true },
-		MiniStarterQuery = { fg = p.cobalt, bold = true },
-		MiniStarterInactive = { fg = p.special },
+		MiniStarterHeader = { fg = p.grey_light },
+		MiniStarterFooter = { fg = p.grey },
+		MiniStarterSection = { fg = p.grey_pale, bold = true },
+		MiniStarterItem = { fg = p.fg },
+		MiniStarterItemBullet = { fg = p.line_number },
+		MiniStarterItemPrefix = { fg = p.ui_accent, bold = true },
+		MiniStarterCurrent = { fg = p.fg, bg = p.bg_soft, bold = true },
+		MiniStarterQuery = { fg = p.ui_accent, bold = true },
+		MiniStarterInactive = { link = "Comment" },
 	}
 end
 

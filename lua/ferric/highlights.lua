@@ -1,18 +1,22 @@
 --- @diagnostic disable: undefined-global
 
 local Groups = require("ferric.groups")
+local Palette = require("ferric.palette")
 local palettes = require("ferric.palettes")
 local Terminal = require("ferric.groups.terminal")
 
 local M = {}
 
 --- @param config FerricConfig
-local function resolve(config)
-	local palette = vim.deepcopy(palettes[vim.o.background] or palettes.dark)
+--- @param family "forge"|"steel"|"graphite"
+local function resolve(config, family)
+	local palette = vim.deepcopy(palettes.get(family, vim.o.background))
 
 	for color, hex in pairs(config.palette_overrides) do
 		palette[color] = hex
 	end
+
+	Palette.resolve(palette)
 
 	local groups = Groups.get(palette)
 
@@ -28,8 +32,9 @@ local function resolve(config)
 end
 
 --- @param config FerricConfig
-function M.apply(config)
-	local palette, groups = resolve(config)
+--- @param family "forge"|"steel"|"graphite"
+function M.apply(config, family)
+	local palette, groups = resolve(config, family)
 
 	if config.terminal_colors then
 		for index, color in ipairs(Terminal.get(palette, vim.o.background == "light")) do

@@ -6,7 +6,6 @@ local modules = {
 	{ name = "diagnostics", value = require("ferric.groups.diagnostics") },
 	{ name = "plugins.gitsigns", value = require("ferric.groups.plugins.gitsigns") },
 	{ name = "plugins.dap", value = require("ferric.groups.plugins.dap") },
-	{ name = "plugins.markview", value = require("ferric.groups.plugins.markview") },
 	{ name = "plugins.render_markdown", value = require("ferric.groups.plugins.render_markdown") },
 	{ name = "plugins.fzf_lua", value = require("ferric.groups.plugins.fzf_lua") },
 	{ name = "plugins.telescope", value = require("ferric.groups.plugins.telescope") },
